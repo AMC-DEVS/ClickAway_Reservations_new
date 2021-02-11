@@ -32718,6 +32718,15 @@ select {
           animation: bounce 1s infinite;
 }
 
+.console_info_wr {
+  display: flex;
+}
+
+.console_info {
+  position: relative;
+  width: 33%;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
