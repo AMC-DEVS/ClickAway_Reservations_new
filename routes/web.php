@@ -15,15 +15,19 @@ use App\Http\Controllers\ReservationController;
 |
 */
 
+// Welcome page
 Route::get('/', function () {
     return view('welcome');
 });
 
-// User authentication
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
 
+// User authentication
+Route::middleware(['auth:sanctum', 'verified'])->get('/home', function () {
+    return view('home');
+})->name('home');
+
+// Home
+Route::get('/home',[CompanyController::class, 'index'])->name('home_page');
 
 // Companies
 

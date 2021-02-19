@@ -5,25 +5,25 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('home_page') }}">
                         <x-jet-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-jet-nav-link href="{{ route('home_page') }}" :active="request()->routeIs('home_page')">
+                        Home
                     </x-jet-nav-link>
                     
                     @if(auth()->user()->company()->count()>0)
-                    <x-jet-nav-link href="{{ route('company_console') }}" :active="request()->routeIs('company_console')">
-                        {{ 'Company Console' }}
-                    </x-jet-nav-link>
-                    @else
-                    <x-jet-nav-link href="{{ route('company_create') }}" :active="request()->routeIs('company_create')">
-                    Resister your Company
-                    </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('company_console') }}" :active="request()->routeIs('company_console')">
+                            {{ 'Company Console' }}
+                        </x-jet-nav-link>
+                        @else
+                        <x-jet-nav-link href="{{ route('company_create') }}" :active="request()->routeIs('company_create')">
+                        Resister your Company
+                        </x-jet-nav-link>
                     @endif
                 </div>
             </div>
@@ -148,9 +148,18 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+            <x-jet-responsive-nav-link href="{{ route('home_page') }}" :active="request()->routeIs('home_page')">
+                Home
             </x-jet-responsive-nav-link>
+            @if(auth()->user()->company()->count()>0)
+                <x-jet-responsive-nav-link href="{{ route('company_console') }}" :active="request()->routeIs('company_console')">
+                    {{ 'Company Console' }}
+                </x-jet-responsive-nav-link>
+                @else
+                <x-jet-responsive-nav-link href="{{ route('company_create') }}" :active="request()->routeIs('company_create')">
+                Resister your Company
+                </x-jet-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->

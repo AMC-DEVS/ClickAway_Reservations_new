@@ -2,13 +2,56 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+
+    font-family: Roboto;
+    src: url(../fonts/Roboto/Roboto-Regular.ttf);
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
 .console_info_wr {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
+
+.company_card {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: space-between;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.company_card_left {
+}
+
+.company_card_right {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    min-width: 100px;
+}
+
 .console_info {
     position: relative;
     width: 33%;
@@ -22,4 +65,8 @@
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
+    flex-direction: column;
+    padding: 20px 10px;
+    font-size: 2vh !important;
+    min-width: 200px;
 }

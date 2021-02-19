@@ -3,7 +3,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            Company registration
         </h2>
     </x-slot>
 
@@ -29,6 +29,38 @@
                 <x-jet-label for="company_email" value="Company email" />
                 <x-jet-input id="company_email" class="block mt-1 w-full" type="email" name="company_email" :value="old('company_email')"/>
             </div>
+            <div class="mt-4">
+                <x-jet-label for="afm" value="AFM" />
+                <x-jet-input id="afm" class="block mt-1 w-full" type="text" name="afm" :value="old('afm')"/>
+            </div>
+            <div class="mt-4">
+                <x-jet-label for="phone_num" value="Phone number" />
+                <x-jet-input id="phone_num" class="block mt-1 w-full" type="text" name="phone_num" :value="old('phone_num')"/>
+            </div>
+            <div class="mt-4">
+                <x-jet-label for="address" value="Address" />
+                <x-jet-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')"/>
+            </div>
+            <div class="mt-4">
+                <x-jet-label for="city" value="City" />
+                <x-jet-input id="city" class="block mt-1 w-full" type="text" name="city" :value="old('city')"/>
+            </div>
+            <div class="mt-4">
+                <x-jet-label for="post_code" value="Post code" />
+                <x-jet-input id="post_code" class="block mt-1 w-full" type="text" name="post_code" :value="old('post_code')"/>
+            </div>
+           
+            @foreach($categories as $category)
+                <div class="mt-4">
+                    <div class="flex items-center">
+                        <x-jet-checkbox name="category_id" value="{{$category->id}}"/>
+                        <div class="ml-2">
+                            {{$category->title}}
+                        </div>  
+                    </div>
+                </div>
+            @endforeach
+
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">

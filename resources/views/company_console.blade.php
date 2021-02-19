@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10">
-                
+               
                 <div class="console_info">
                     <h3 class="font-semibold text-xl ">Owner name</h3>
                     <p>{{$ownername}}</p><br/>
@@ -24,6 +24,27 @@
                     <h3  class="font-semibold text-xl ">Company email</h3>
                     <p>{{$company_email}}</p>
                 </div>
+                
+                <div class="console_info">  
+                    <h3  class="font-semibold text-xl ">Company Category</h3>
+                    <p>{{$category}}</p>
+                </div>
+
+                <div class="console_info">  
+                    <h3  class="font-semibold text-xl ">Company location</h3>
+                    <p>{{$city}}</p>
+                </div>
+
+                <div class="console_info">  
+                    <h3  class="font-semibold text-xl ">Company post code</h3>
+                    <p>{{$post_code}}</p>
+                </div>
+
+                <div class="console_info">  
+                    <h3  class="font-semibold text-xl ">Company address</h3>
+                    <p>{{$address}}</p>
+                </div>
+
             </div>
         </div>
     </div>
@@ -54,7 +75,7 @@
                 @else
                     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10">
                         <div class="console_info">
-                            <h3 class="font-semibold text-xl ">You have not any reservations yet! :-)</h3>
+                            <h3 class="font-semibold text-xl">You have not any reservations yet! :-)</h3>
                         </div>
                     </div>
             @endif

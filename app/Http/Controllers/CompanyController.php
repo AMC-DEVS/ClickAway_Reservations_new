@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Company;
+use App\Models\Category;
+
 
 class CompanyController extends Controller
 {
@@ -14,12 +17,17 @@ class CompanyController extends Controller
 
     public function index(){
         
-        
+        $companies = Company::all();
+        return view('home', compact('companies'));
     }
 
     public function create()
     {    
-        return view('company_create');    }
+        $categories = Category::all();       
+        
+        return view('company_create', compact('categories'));
+    
+    }
     
      /**
      * Create a newly registered Company.
@@ -29,28 +37,49 @@ class CompanyController extends Controller
      */
     public function save()
     {        
+
         $data = request()->validate([
             'user_id' => '',
+            'afm' => ['required', 'string', 'max:255'],
             'company_email' =>  ['required', 'string', 'email', 'max:255'],
-            'company_name' => ['required', 'string', 'max:255'],
+            'company_name' =>  ['required', 'string', 'max:255'],
+            'phone_num' => ['required', 'string', 'max:255'],
+            'address' => ['required', 'string', 'max:255'],
+            'city' => ['required', 'string', 'max:255'],
+            'post_code' => ['required', 'string'],
+            'category_id' => ['required', 'integer'],
+            'profile_photo_path' => '',
+            'rsv_availabillity' => '',
         ]);
 
         auth()->user()->company()->create([
             'user_id' => auth()->user()->id,
+            'afm' => $data['afm'],
             'company_email' => $data['company_email'],
-            'company_name' => $data['company_name'],
+            'company_name' => $data['company_name'], 
+            'phone_num' => $data['phone_num'], 
+            'address' => $data['address'], 
+            'city' => $data['city'], 
+            'post_code' => $data['post_code'], 
+            'category_id' => $data['category_id'], 
+            // 'profile_photo_path' => $data['profile_photo_path'],
+            // 'rsv_availabillity' => $data['rsv_availabillity']
         ]);
         return redirect('company_console');
-        // return redirect('/user/profile');
     }
 
-    public function update(User $user){
-        $this->authorize('update', $user->profile);
+    public function update(Company $company){
+        $this->authorize('update', $company);
         $data = request()->validate([
 
-            'company_email' => auth()->user()->name,
+            'company_email' => '',
             'company_name' => '',
-           
+            'phone_num' => '',
+            'address' => '',
+            'post_code' => '',
+            'profile_photo_path' => '',
+            'afm' => '',
+            'rsv_availabillity' => ''
         ]);
        
     }

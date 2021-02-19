@@ -20,7 +20,12 @@ class ReservationController extends Controller
         $company_name = $company->pluck('company_name')[0];
         $company_email =$company->pluck('company_email')[0];
 
-
+        $city = $company->pluck('city')[0];
+        $post_code = $company->pluck('post_code')[0];
+        $address = $company->pluck('address')[0];
+        $phone_num = $company->pluck('phone_num')[0];
+        $category = $company[0]->category()->get()->pluck('title')[0];
+     
        
         if($company[0]->reservation()->count()>0){
             
@@ -33,7 +38,20 @@ class ReservationController extends Controller
         }
 
 
-        return view('company_console', compact('company','ownername','company_name', 'company_email', 'reservations', 'users'));
+
+        return view('company_console', compact(
+            'company',
+            'ownername',
+            'city',
+            'post_code',
+            'address',
+            'category',
+            'phone_num',
+            'company_name',
+            'company_email',
+            'reservations',
+            'users'
+        ));
        
     }
 
