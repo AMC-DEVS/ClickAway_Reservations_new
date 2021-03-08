@@ -15,6 +15,10 @@
                     <x-jet-nav-link href="{{ route('home_page') }}" :active="request()->routeIs('home_page')">
                         Home
                     </x-jet-nav-link>
+                   
+                    <x-jet-nav-link href="{{ route('user_reservations') }}" :active="request()->routeIs('user_reservations')">
+                        My reservations
+                    </x-jet-nav-link>
                     
                     @if(auth()->user()->company()->count()>0)
                         <x-jet-nav-link href="{{ route('company_console') }}" :active="request()->routeIs('company_console')">
@@ -150,6 +154,9 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('home_page') }}" :active="request()->routeIs('home_page')">
                 Home
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('user_reservations') }}" :active="request()->routeIs('user_reservations')">
+                My reservations
             </x-jet-responsive-nav-link>
             @if(auth()->user()->company()->count()>0)
                 <x-jet-responsive-nav-link href="{{ route('company_console') }}" :active="request()->routeIs('company_console')">

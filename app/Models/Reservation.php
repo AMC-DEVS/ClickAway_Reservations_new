@@ -11,7 +11,7 @@ class Reservation extends Model
 
     
     protected $fillable = [
-        'user_id', 'company_id', 'date', 'time','user'
+        'user_id', 'company_id', 'time'
     ];
 
     public function company()

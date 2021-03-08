@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\CompanyProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/home', function () {
     return view('home');
 })->name('home');
 
+Route::get('/user_reservations',[ReservationController::class, 'index_user'])->name('user_reservations');
+
 // Home
 Route::get('/home',[CompanyController::class, 'index'])->name('home_page');
 
@@ -33,7 +36,10 @@ Route::get('/home',[CompanyController::class, 'index'])->name('home_page');
 
 Route::get('/company_console',[ReservationController::class, 'index'])->name('company_console');
 
+Route::get('/company_profile/{company}',[CompanyProfileController::class, 'show'])->name('company_profile');
+
 Route::get('/company_console/create', [CompanyController::class, 'create'])->name('company_create');
 
+Route::post('/reservation/save', [ReservationController::class, 'save'])->name('reservation_save');
 
 Route::post('/company_console/save', [CompanyController::class, 'save'])->name('company_save');

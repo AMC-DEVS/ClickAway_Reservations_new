@@ -20,12 +20,15 @@
                     </div>
                     <div class="company_card_right">
                     <x-jet-button class="ml-4">
+                        <a href="/company_profile/{{$company->id}}">
                         Make a reservation
+                        </a>
+                       
                     </x-jet-button>
                     </div>
                 </div>
             </div></br>
-
+ 
             @endforeach
 
         @else

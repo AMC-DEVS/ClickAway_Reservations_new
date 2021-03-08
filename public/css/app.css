@@ -32762,6 +32762,93 @@ select {
   min-width: 200px;
 }
 
+/* Main page - login  */
+
+.main-svg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.main-svg circle {
+  fill: none;
+  stroke-width: 0px;
+  stroke: #fafafa;
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+  opacity: 0;
+  -webkit-animation: 4s circle-outline forwards;
+  animation: 4s circle-outline forwards;
+}
+
+.main-svg path {
+  fill: none;
+  stroke: #fafafa;
+  stroke-width: 4px;
+  stroke-dasharray: 990;
+  stroke-dashoffset: 200;
+  opacity: 0;
+  -webkit-animation: 4s text-outline forwards;
+  animation: 4s text-outline forwards;
+}
+
+@-webkit-keyframes circle-outline {
+  from {
+    opacity: 0;
+    stroke-dashoffset: 2800;
+  }
+
+  to {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes circle-outline {
+  from {
+    opacity: 0;
+    stroke-dashoffset: 2800;
+  }
+
+  to {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes text-outline {
+  from {
+    opacity: 0;
+    stroke-dashoffset: 1200;
+  }
+
+  to {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes text-outline {
+  from {
+    opacity: 0;
+    stroke-dashoffset: 1200;
+  }
+
+  to {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+.login_bg {
+  background: #65bcbf !important;
+}
+
+/* END Main page - login  */
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

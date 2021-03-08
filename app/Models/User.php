@@ -64,6 +64,12 @@ class User extends Authenticatable
         return $this->hasOne(Company::class);
     }
 
+    // A company has many reservation
+    public function reservation()
+    {
+        return $this->hasMany(Reservation::class);
+    }
+
 }
 
 

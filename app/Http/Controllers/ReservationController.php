@@ -9,9 +9,13 @@ use App\Models\User;
 
 class ReservationController extends Controller
 {
-    public function index(){   
 
- 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function index(){   
 
         $company = auth()->user()->company()->where('user_id', auth()->user()->id)->get();
 
@@ -55,6 +59,21 @@ class ReservationController extends Controller
        
     }
 
+    public function index_user(){   
+
+    $user = auth()->user();
+    // $reservations = $user->reservation();
+       
+     
+
+
+
+        return view('user_reservations', compact(
+           'user'
+        ));
+       
+    }
+
     // public function show(){   
     //     return view('company_console', compact('company','ownername','company_name', 'company_email'));
     // }
@@ -63,9 +82,21 @@ class ReservationController extends Controller
     //     return view('company_console', compact('company','ownername','company_name', 'company_email'));
     // }
 
-    // public function save(){   
-    //     return view('company_console', compact('company','ownername','company_name', 'company_email'));
-    // }
+    public function save(){   
+        $data = request()->validate([
+            'user_id' => '',
+            'company_id' =>  ['required', 'string', 'max:255'],
+            'time' => ['required', 'string', 'max:100'],
+        ]);
+
+        auth()->user()->reservation()->create([
+            'user_id' => auth()->user()->id,
+            'company_id' => $data['company_id'], 
+            'time' => $data['time'],
+        ]);
+
+        return redirect('home');
+    }
 
     // public function delete(){   
     //     return view('company_console', compact('company','ownername','company_name', 'company_email'));
