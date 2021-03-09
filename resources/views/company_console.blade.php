@@ -7,7 +7,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10">
+            <div class="glass-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10">
                
                 <div class="console_info">
                     <h3 class="font-semibold text-xl ">Owner name</h3>
@@ -54,7 +54,7 @@
            
            @if($reservations != null)
             @foreach($reservations as $reservation)
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-5">
+            <div class="glass-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-5">
 
                 <div style = "display:none;">
                 {{  $user_id = $reservation->user_id }}
@@ -73,7 +73,7 @@
                 </div></br>
                 @endforeach  
                 @else
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10">
+                    <div class="glass-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10">
                         <div class="console_info">
                             <h3 class="font-semibold text-xl">You have not any reservations yet! :-)</h3>
                         </div>

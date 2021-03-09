@@ -10,7 +10,7 @@
         @if($companies->count() > 0)
 
             @foreach($companies as $company)
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-10">
+            <div class="glass-effect overflow-hidden shadow-xl sm:rounded-lg p-10">
                 <div class="company_card">  
                     <div class="company_card_left">
                         <h3  class="font-semibold text-xl ">{{$company->company_name}}</h3>
