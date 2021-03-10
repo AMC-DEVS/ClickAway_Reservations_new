@@ -25,7 +25,7 @@ class CompanyController extends Controller
     {    
         $categories = Category::all();       
         
-        return view('company_create', compact('categories'));
+        return view('company.company_create', compact('categories'));
     
     }
     
@@ -65,11 +65,13 @@ class CompanyController extends Controller
             // 'profile_photo_path' => $data['profile_photo_path'],
             // 'rsv_availabillity' => $data['rsv_availabillity']
         ]);
-        return redirect('company_console');
+        return redirect('company.company_console');
     }
 
     public function update(Company $company){
         $this->authorize('update', $company);
+
+        
         $data = request()->validate([
 
             'company_email' => '',
@@ -77,6 +79,7 @@ class CompanyController extends Controller
             'phone_num' => '',
             'address' => '',
             'post_code' => '',
+            'city' => '',
             'profile_photo_path' => '',
             'afm' => '',
             'rsv_availabillity' => ''

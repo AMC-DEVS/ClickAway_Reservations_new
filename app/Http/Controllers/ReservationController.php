@@ -43,7 +43,7 @@ class ReservationController extends Controller
 
 
 
-        return view('company_console', compact(
+        return view('company.company_console', compact(
             'company',
             'ownername',
             'city',
@@ -61,14 +61,9 @@ class ReservationController extends Controller
 
     public function index_user(){   
 
-    $user = auth()->user();
-    // $reservations = $user->reservation();
-       
-     
-
-
-
-        return view('user_reservations', compact(
+        $user = auth()->user();  
+        
+        return view('reservations.user_reservations', compact(
            'user'
         ));
        

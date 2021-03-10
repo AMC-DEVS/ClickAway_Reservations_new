@@ -10,6 +10,11 @@
     src: url(../fonts/Roboto/Roboto-Regular.ttf);
 }
 
+:root {
+    --primary-button: #53d8d8;
+    --secondary-button: #f99757;
+}
+
 * {
     font-family: "Roboto", sans-serif;
 }
@@ -40,7 +45,12 @@
     justify-content: space-between;
 }
 
-.company_card_left {
+a.edit-button {
+    left: 10px;
+    position: relative;
+    padding: 5px 10px;
+    border-radius: 5px 5px 0px 0px;
+    color: var(--secondary-button);
 }
 
 .company_card_right {
@@ -72,6 +82,10 @@
 }
 
 /* Main page - login  */
+.border-indigo-400 {
+    border-color: #ffb837;
+    border-bottom-width: 4px;
+}
 
 .main-svg {
     position: absolute;
@@ -149,10 +163,201 @@
 }
 
 .main_bg {
-    background-image: linear-gradient(90deg, #53d8d8, #ece3e2);
-    background-image: -moz-linear-gradient(90deg, #53d8d8, #ece3e2);
-    background-image: -o-linear-gradient(90deg, #53d8d8, #ece3e2);
-    background-image: -webkit-linear-gradient(90deg, #53d8d8, #ece3e2);
+    background-image: linear-gradient(90deg, var(--primary-button), #ece3e2);
+    background-image: -moz-linear-gradient(
+        90deg,
+        var(--primary-button),
+        #ece3e2
+    );
+    background-image: -o-linear-gradient(90deg, var(--primary-button), #ece3e2);
+    background-image: -webkit-linear-gradient(
+        90deg,
+        var(--primary-button),
+        #ece3e2
+    );
+}
+
+.hide {
+    opacity: 0;
+    height: 0;
+}
+
+.show {
+    opacity: 1;
+}
+
+.hide,
+.show,
+.auth-card {
+    transition: all 0.1s ease-out;
+    -webkit-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+}
+
+.login-wr {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.auth-card {
+    max-width: 60rem !important;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 370px;
+
+    animation: fadeInDown 2s forwards;
+}
+
+.logo-wr svg {
+    margin: auto;
+}
+
+.leftc,
+.rightc {
+    max-width: 500px;
+    min-width: 300px;
+    padding: 0 20px;
+}
+
+.horline {
+    color: gray;
+    background-color: gray;
+    height: 2px;
+}
+
+.message-wr {
+    position: relative;
+}
+
+.main-message {
+    font-size: 4vh;
+    height: 60px;
+    position: relative;
+}
+
+.main-message::before {
+    content: "";
+    animation: animate 5s infinite;
+    animation-delay: 0.5s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes animate {
+    0% {
+        content: "WELCOME TO AMC";
+        opacity: 0;
+
+        position: relative;
+    }
+
+    100% {
+        content: "WELCOME TO AMC";
+        opacity: 1;
+
+        position: relative;
+    }
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+#login_form {
+    width: 100%;
+}
+
+.form-title {
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+    padding: 10px 0;
+}
+
+.home-button {
+    padding: 10px 20px;
+    background: #ffb837;
+    color: white;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.signup-buttons {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-pack: space-between;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    max-width: 200px;
+}
+
+.switch-button {
+    background-color: var(--primary-button);
+    margin: 0;
+}
+
+.secondary_message {
+    padding: 10px 0;
+}
+
+.secondary_message,
+.signup-text {
+    position: relative;
+    margin: 0 0;
+
+    display: flex;
+}
+
+.signup-text {
+    margin: 5px 0;
+}
+
+@media (max-width: 784px) {
+    div.login-wr {
+        margin-top: 50px;
+    }
 }
 
 /* END Main page - login  */
@@ -175,4 +380,24 @@
     border-radius: 0px 0px 17px 17px;
 }
 
+button.switch-button {
+    background-color: var(--primary-button);
+}
+
+.submit-button {
+    background-color: var(--secondary-button);
+}
+button {
+    height: 40px;
+}
 /* END Glass effect */
+
+/*  */
+
+/* icons */
+
+.fab {
+    font-size: 30px;
+}
+
+/* END icons */

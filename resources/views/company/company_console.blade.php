@@ -7,8 +7,8 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <a class="glass-effect edit-button" href="{{ route('company_profile_edit', $company->pluck('id')[0]) }}"><small>Edit your informations</small></a>
             <div class="glass-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10">
-               
                 <div class="console_info">
                     <h3 class="font-semibold text-xl ">Owner name</h3>
                     <p>{{$ownername}}</p><br/>
