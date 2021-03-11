@@ -13,7 +13,7 @@ class CompanyProfile extends Model
     protected $fillable = [
         'company_id', 
         'user_id', 
-        'time', 
+        'image', 
     ];
 
     public function company() 

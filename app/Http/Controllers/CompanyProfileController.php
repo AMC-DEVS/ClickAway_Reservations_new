@@ -56,31 +56,6 @@ class CompanyProfileController extends Controller
 
          auth()->user()->company()->update($data);
 
-        
-
-        // if (request('image')) {
-
-        //     $imagePath = request('image');
-            
-		// 	$imagePathdes = request('image')->store('storage', 'public');
-            
-        //     $imagePath = base64_decode($imagePath);
-            
-        //     file_put_contents($path, $image);
-          
-        //     $image = Image::make($imagePath)->fit(500, 500);
-            
-        // 	$image->save($imagePathdes); 
-			
-		// 	$imageArray = ['image' => $imagePathdes];
-        // }
-
-        // auth()->user()->profile->update(array_merge(
-        //         $data,
-        //         $imageArray ?? []
-        //     ));
-        
-
         return redirect("/company_console");
     }
 }
