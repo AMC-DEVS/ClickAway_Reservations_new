@@ -7,7 +7,8 @@ use Livewire\WithFileUploads;
 use App\Models\Company;
 
 use App\Models\User;
-
+use Illuminate\Support\Facades\File;
+use \Illuminate\Support\Facades\Storage;
 class ImageUpload extends Component
 {
     use WithFileUploads;
@@ -19,12 +20,27 @@ class ImageUpload extends Component
             'profile_photo_path' => 'image|max:1024', // 1MB Max
         ]);
 
+        // Delete old image
+        $oldImage = auth()->user()->company->profile_photo_path;
+        File::delete(public_path('storage/'.$oldImage));
+        
         $image_path = $this->profile_photo_path->store('company_images', 'public');
-
-
+        
+        
         $arrayToStore = ['profile_photo_path' => $image_path];
-
+        
+        // Update new image
         auth()->user()->company()->update($arrayToStore);
+        
+   
+            
+        if (Storage::disk('public')->exists($oldImage)) {
+            
+            $oldImage = public_path().'/'.$oldImage;
+            dd($oldImage);  
+            @unlink($oldImage);
+     
+        }
 
         session()->flash('message', 'Image uploaded.');
 

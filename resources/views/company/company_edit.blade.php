@@ -10,12 +10,15 @@
     
         <x-jet-authentication-card>
             <div class="image_upload-wr">
-                    @livewire('image-upload')
+                @livewire('image-upload')
             </div>
-                <x-slot name="logo">
-                    <x-jet-authentication-card-logo />
-                    <h3>Edit company informations</h3>
-                </x-slot>
+            <h1>Edit company informations</h1>
+
+            <x-slot name="logo">
+                <!-- <x-jet-authentication-card-logo /> -->
+            </x-slot>
+           
+          
 
             <x-jet-validation-errors class="mb-4" />
         

@@ -454,4 +454,15 @@ button {
     flex-wrap: wrap;
 }
 
+.alert-success {
+    color: green;
+}
+
+.image_upload-wr {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 50px 0;
+}
+
 /* END Custom input */
