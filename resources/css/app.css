@@ -180,10 +180,12 @@ a.edit-button {
 .hide {
     opacity: 0;
     height: 0;
+    display: none;
 }
 
 .show {
     opacity: 1;
+    display: block;
 }
 
 .hide,

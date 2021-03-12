@@ -65,7 +65,7 @@ class CompanyController extends Controller
             // 'profile_photo_path' => $data['profile_photo_path'],
             // 'rsv_availabillity' => $data['rsv_availabillity']
         ]);
-        return redirect('company.company_console');
+        return redirect('/company_console');
     }
 
     public function update(Company $company){
