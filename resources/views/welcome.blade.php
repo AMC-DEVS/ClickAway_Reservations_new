@@ -93,7 +93,7 @@
 				
 						<div>
 							<x-jet-label for="phone_num" value="Phone number" />
-							<x-jet-input id="phone_num" class="block mt-1 w-full" type="number" name="phone_num" :value="old('phone_num')" required autofocus/>
+							<x-jet-input id="phone_num" class="block mt-1 w-full" type="number" name="phone_num" :value="old('phone_num')" required autofocus  placeholder="+30" />
 						</div>
 			
 						<div class="mt-4">
