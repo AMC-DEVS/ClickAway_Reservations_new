@@ -26,7 +26,7 @@
                         </x-jet-nav-link>
                         @else
                         <x-jet-nav-link href="{{ route('company_create') }}" :active="request()->routeIs('company_create')">
-                        Resister your Company
+                        Register your Company
                         </x-jet-nav-link>
                     @endif
                 </div>
