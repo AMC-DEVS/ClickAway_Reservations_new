@@ -33242,6 +33242,35 @@ button {
 
 /* END Home */
 
+/*
+Responsive Design for Confetti.js
+*/
+
+#canvas {
+  height: 100vh;
+  pointer-events: none;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  margin:-40% -30rem;
+}
+
+@media (max-width: 675px)
+  {
+  #canvas {
+    height: 100vh;
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    margin:-80% -10rem;
+  }
+}
+
+/*
+End Responsive Design for Confetti.js
+*/
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -192706,4 +192735,3 @@ button {
             animation: bounce 1s infinite;
   }
 }
-
