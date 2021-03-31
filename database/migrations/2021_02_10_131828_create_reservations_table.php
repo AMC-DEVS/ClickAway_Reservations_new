@@ -18,6 +18,7 @@ class CreateReservationsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('company_id');
             $table->string('time', 100)->unique();
+            $table->string('date', 100)->unique();
             
             
             $table->timestamps();

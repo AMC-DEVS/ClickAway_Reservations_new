@@ -1,5 +1,14 @@
 <div>
         <div class="homesearch-wr">
+            <div class="mb-8">
+                <select name="category" wire:model="city" 
+                    class="p-2 px-4 py-2 pr-8 leading-tight bg-white border border-gray-400 rounded shadow appearance-none hover:border-gray-500 focus:outline-none focus:shadow-outline">
+                   
+                    @foreach($allCompanies as $company)
+                        <option value='{{ $company->city }}'>{{ $company->city}}</option>
+                    @endforeach
+                </select>
+            </div>
             <x-jet-label for="customcity" value="Choose you city" />
             <x-jet-input id="customcity" class="block mt-1 w-full" type="text" wire:model="city" name="customcity"  placeholder="Search a city" :value="old('customcity')" autofocus autocomplete="customcity" />
         </div>

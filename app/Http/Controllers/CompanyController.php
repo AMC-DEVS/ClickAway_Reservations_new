@@ -46,10 +46,13 @@ class CompanyController extends Controller
             'phone_num' => ['required', 'string', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
             'city' => ['required', 'string', 'max:255'],
+            'open_time' => ['required', 'string', 'max:255'],
+            'close_time' => ['required', 'string', 'max:255'],
             'post_code' => ['required', 'string'],
             'category_id' => ['required', 'integer'],
             'profile_photo_path' => '',
             'rsv_availabillity' => '',
+            'reservation_frequency' => ['required']
         ]);
 
         auth()->user()->company()->create([
@@ -59,6 +62,8 @@ class CompanyController extends Controller
             'company_name' => $data['company_name'], 
             'phone_num' => $data['phone_num'], 
             'address' => $data['address'], 
+            'open_time' => $data[ 'open_time'], 
+            'close_time' => $data['close_time'], 
             'city' => $data['city'], 
             'post_code' => $data['post_code'], 
             'category_id' => $data['category_id'], 

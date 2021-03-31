@@ -21,6 +21,6 @@ class Searchcity extends Component
         $allCompanies = Company::all();
         $companies = $allCompanies->whereIn('city', $city);
         $categories = Category::all();
-        return view('livewire.searchcity', compact('companies', 'categories', 'category_id'));
+        return view('livewire.searchcity', compact('companies', 'categories', 'category_id', 'allCompanies'));
     }
 }

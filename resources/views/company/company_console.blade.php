@@ -53,6 +53,13 @@
     </div>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <h1 class="font-semibold text-xl text-gray-800 leading-tight" >Configurations</h1></br>
+     
+            @livewire('company-config')
+        </div>
+    </div>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <h1 class="font-semibold text-xl text-gray-800 leading-tight" >Reservations</h1></br>
            
            @if($reservations != null)
@@ -70,8 +77,19 @@
                     </div>
 
                     <div class="console_info">
-                        <h3  class="font-semibold text-xl ">Time</h3>
+                        <h3  class="font-semibold text-xl ">Date & Time</h3>
                         <p>{{ $time }}</p>
+                    </div>
+                    <div class="res_status-wr">
+                        <small class="res_status-date"><b class="mr-1">Received at: </b>{{$reservation->created_at}}</small>
+                        <div class="res_status-buttons">
+                            <x-jet-button class="ml-4 status_label status-success">
+                                Verify                       
+                            </x-jet-button>
+                            <x-jet-button class="ml-4 status_label status-reject">
+                                Reject                       
+                            </x-jet-button>
+                        </div>
                     </div>
                 </div></br>
                 @endforeach  

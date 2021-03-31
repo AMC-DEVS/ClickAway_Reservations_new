@@ -19,6 +19,7 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+     
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
@@ -44,6 +45,8 @@
         @stack('modals')
 
         @livewireScripts
+
+        <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
 
         <!-- Google maps -->
         <!-- Async script executes immediately and must be after any DOM elements used in callback. -->

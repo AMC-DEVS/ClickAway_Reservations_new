@@ -13,6 +13,9 @@ class CompanyProfileController extends Controller
         $company_email = $company->company_email;
         $city = $company->city;
         $post_code = $company->post_code;
+        $open_time = $company->open_time;
+        $close_time = $company->close_time;
+        $reservation_frequency = $company->reservation_frequency;
         $address = $company->address;
         $category = $company->category()->get()->pluck('title')[0];
         $phone_num = $company->phone_num;
@@ -26,9 +29,12 @@ class CompanyProfileController extends Controller
             'city',
             'post_code',
             'address',
+            'open_time',
+            'close_time',
             'category',
             'phone_num',
-            'company'
+            'company',
+            'reservation_frequency'
         ));
     }
 

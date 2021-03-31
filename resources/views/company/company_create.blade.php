@@ -49,17 +49,31 @@
                 <x-jet-label for="post_code" value="Post code" />
                 <x-jet-input id="post_code" class="block mt-1 w-full" type="text" name="post_code" :value="old('post_code')"/>
             </div>
+            <div class="mt-4">
+                <x-jet-label for="open_time" value="Opening Time" />
+                <input type="time" name="open_time"  type="time"/>               
+            </div>
+            <div class="mt-4">
+                <x-jet-label for="close_time" value="Closing Time" />
+                <input type="time" name="close_time"  type="time"/>         
+            </div>
+            <div class="mt-4">
+                <x-jet-label for="reservation_frequency" value="Reservation Frequency" />
+                <select name="reservation_frequency" id="reservation_frequency">
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="60">60</option>
+                </select>
+            </div>
            
-            @foreach($categories as $category)
-                <div class="mt-4">
-                    <div class="flex items-center">
-                        <x-jet-checkbox name="category_id" value="{{$category->id}}"/>
-                        <div class="ml-2">
-                            {{$category->title}}
-                        </div>  
-                    </div>
-                </div>
-            @endforeach
+            <div class="mt-4">
+                <x-jet-label for="category_id" value="Category" />
+                <select name="category_id" id="category_id">
+                @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{$category->title}}</option>
+                @endforeach
+                </select>
+            </div>
 
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())

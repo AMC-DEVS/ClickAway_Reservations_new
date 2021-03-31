@@ -24,6 +24,9 @@ class CreateCompaniesTable extends Migration
             $table->string('address', 50);
             $table->string('city', 30);
             $table->string('post_code', 15);
+            $table->string('open_time', 15);
+            $table->string('close_code', 15);
+            $table->string('reservation_frequency', 2);
             $table->unsignedBigInteger('category_id');
             $table->text('profile_photo_path')->nullable();
             $table->boolean('rsv_availabillity')->default(false);

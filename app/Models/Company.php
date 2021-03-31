@@ -20,9 +20,12 @@ class Company extends Model
         'address', 
         'city', 
         'post_code', 
+        'open_time',
+        'close_time',
+        'reservation_frequency',
         'category_id', 
         'profile_photo_path',
-        'rsv_availabillity'
+        'rsv_availabillity',
     ];
 
     // A company belongs to a user

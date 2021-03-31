@@ -11,26 +11,27 @@
            
           
 
-           @if($user->reservation != null)
-            @foreach($user->reservation as $reservation)
-            <div class="glass-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-5">
+            @if($user->reservation != null)
+                @foreach($user->reservation as $reservation)
+                    <div class="glass-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-5">
 
-                <div style = "display:none;">
-                {{  $company = $reservation->company}}
-                {{  $time = $reservation->time }}
-                </div>                
-                    <div class="console_info">
-                        <h3 class="font-semibold text-xl ">Company name</h3>
-                        <p>{{ $company->company_name }}</p>
-                    </div>
+                        <div style = "display:none;">
+                            {{  $company = $reservation->company}}
+                            {{  $time = $reservation->time }}
+                            {{  $date = $reservation->date }}
+                        </div>                
+                        <div class="console_info">
+                            <h3 class="font-semibold text-xl ">Company name</h3>
+                            <p>{{ $company->company_name }}</p>
+                        </div>
 
-                    <div class="console_info">
-                        <h3  class="font-semibold text-xl ">Time</h3>
-                        <p>{{ $time }}</p>
-                    </div>
-
-                    
-                </div></br>
+                        <div class="console_info">
+                            <h3  class="font-semibold text-xl ">Date & Time</h3>
+                            <p>{{ $date }}</p>
+                            <p>{{ $time }}</p>
+                        </div>
+                        <span class="status_label status-success">Veryfied</span>
+                    </div></br>
                 @endforeach  
                 @else
                     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10">

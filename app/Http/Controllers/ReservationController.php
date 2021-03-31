@@ -24,6 +24,8 @@ class ReservationController extends Controller
         $company_name = $company->pluck('company_name')[0];
         $company_email =$company->pluck('company_email')[0];
 
+        $open_time = $company->pluck('open_time')[0];
+        $close_time = $company->pluck('close_time')[0];
         $city = $company->pluck('city')[0];
         $post_code = $company->pluck('post_code')[0];
         $address = $company->pluck('address')[0];
@@ -47,6 +49,8 @@ class ReservationController extends Controller
             'company',
             'ownername',
             'city',
+            'open_time',
+            'close_time',
             'post_code',
             'address',
             'category',
@@ -82,12 +86,14 @@ class ReservationController extends Controller
             'user_id' => '',
             'company_id' =>  ['required', 'string', 'max:255'],
             'time' => ['required', 'string', 'max:100'],
+            'date' => ['required', 'string', 'max:100'],
         ]);
 
         auth()->user()->reservation()->create([
             'user_id' => auth()->user()->id,
             'company_id' => $data['company_id'], 
             'time' => $data['time'],
+            'date' => $data['date'],
         ]);
 
         return redirect('home');
