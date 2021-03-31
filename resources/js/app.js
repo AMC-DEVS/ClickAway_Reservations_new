@@ -147,7 +147,6 @@ flatpickr("#picktime60", {
 //       map.fitBounds(bounds);
 //     });
 //   }
-
 // Full screen confetti
 // confetti.start(9550);
 
@@ -159,7 +158,7 @@ if( document.querySelectorAll('.confeti').length > 0 ){
         // "physics" variables
         const gravityConfetti = 0.3
         const gravitySequins = 0.55
-        const dragConfetti = 0.075
+        const dragConfetti = 0.075 
         const dragSequins = 0.02
         const terminalVelocity = 3
         
