@@ -67,6 +67,7 @@ class CompanyController extends Controller
             'city' => $data['city'], 
             'post_code' => $data['post_code'], 
             'category_id' => $data['category_id'], 
+            'reservation_frequency' =>$data['reservation_frequency']
             // 'profile_photo_path' => $data['profile_photo_path'],
             // 'rsv_availabillity' => $data['rsv_availabillity']
         ]);

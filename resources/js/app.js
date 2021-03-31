@@ -8,9 +8,10 @@ window.flatpckr = flatpckr;
 
 
 var buttonswitch = document.getElementsByClassName('switch-button');
+var card = document.getElementsByClassName('.auth-card');
 
 if( buttonswitch.length > 0 ){
-    
+    console.log('connected');
     document.querySelector('.switch-button').addEventListener('click', () => {
     
         var register, login, button;
@@ -18,7 +19,6 @@ if( buttonswitch.length > 0 ){
         button = document.querySelector('.switch-button');    
         register = document.querySelector('#register_form');
         login = document.querySelector('#login_form');
-        card = document.querySelector('.auth-card');
         
         
         if(register.classList.contains('hide')) {

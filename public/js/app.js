@@ -3801,14 +3801,15 @@ __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 
 window.flatpckr = flatpickr__WEBPACK_IMPORTED_MODULE_0__.default;
 var buttonswitch = document.getElementsByClassName('switch-button');
+var card = document.getElementsByClassName('.auth-card');
 
 if (buttonswitch.length > 0) {
+  console.log('connected');
   document.querySelector('.switch-button').addEventListener('click', function () {
     var register, login, button;
     button = document.querySelector('.switch-button');
     register = document.querySelector('#register_form');
     login = document.querySelector('#login_form');
-    card = document.querySelector('.auth-card');
 
     if (register.classList.contains('hide')) {
       card.style = 'min-height: 600px;';

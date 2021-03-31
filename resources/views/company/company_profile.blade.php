@@ -106,7 +106,6 @@
                     <x-jet-button id="button" class="ml-4 ready confeti message submitMessage button-text" onclick="clickButton();">
                         {{ __('Register') }}
                     </x-jet-button>
-
                     </div>
                 </form>
             </div>

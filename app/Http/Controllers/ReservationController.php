@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use App\Models\Company;
 
 class ReservationController extends Controller
 {
@@ -95,9 +96,75 @@ class ReservationController extends Controller
             'time' => $data['time'],
             'date' => $data['date'],
         ]);
-
+        $user_num = auth()->user()->phone_num;
+        
+        $user_name = auth()->user()->name;
+        
+        $message = $user_name.' We are able to verify your reservation.'.$data['time'].''.$data['date'];
+        $sms_data = array(
+            array(
+                'destination' => '6981300771',
+                'message' => $message,
+            )
+        );
+        $company = Company::all()->whereIn('company_id', $data['company_id']);
+        $company_name = $company->pluck('company_name');
+        $api_token = "815d060b35159c3643003bcddf3cdf716a80b8269914cfde30c8b91a8fa31817";
+        $this->sendSMSMulti($sms_data, $api_token, $company_name,  1);
         return redirect('home');
     }
+
+      
+	//---------------------------- SMS -----------------------------------------------
+	//-------------------------------------------------------------------------------------------------------
+	private $siteURL = "https://sms.liveall.eu/apiext/Sendout/SendJSMS";
+	//-------------------------------------------------------------------------------------------------------
+	public function sendSMSMulti($smsData, $api_token, $sender_name, $pricecat = -1, $sendon = NULL)
+	{
+        
+        
+
+		$payloadObj = array(
+			'apitoken'		=>	$api_token,
+			'senderid'		=>	$sender_name,
+			'messages'		=>	$smsData
+		);
+		
+		if($sendon !== NULL)
+			$payloadObj['sendon'] = $sendon;
+		
+		if($pricecat !== -1)
+			$payloadObj['pricecat'] = $pricecat;
+
+		return $this->curl_submit_json_data($payloadObj);
+	}
+	//-------------------------------------------------------------------------------------------------------
+	private function curl_submit_json_data($jdata)
+	{
+		$data_string = json_encode($jdata);
+		
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $this->siteURL);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$result  = curl_exec($ch);
+		
+		if($result === FALSE) {
+			$err_msg = curl_error($ch);
+			curl_close($ch);
+			
+			return $err_msg;
+		}
+		
+		curl_close($ch);	
+		
+		return $result;
+	}
+	//-------------------------------------------------------------------------------------------------------
 
     // public function delete(){   
     //     return view('company_console', compact('company','ownername','company_name', 'company_email'));
