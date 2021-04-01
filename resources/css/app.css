@@ -347,6 +347,11 @@ a.edit-button {
     background-color: #f99757;
 }
 
+.forgot-button {
+    background-color: var(--secondary-button);
+    border-radius: 7px;
+}
+
 .switch-button {
     background-color: var(--primary-button);
     margin: 0;
