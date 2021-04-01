@@ -32959,7 +32959,6 @@ a.edit-button {
     content: "WELCOME TO AMC";
     opacity: 0;
     font-weight: 700;
-    font-size: 18px;
     position: relative;
   }
 
@@ -32967,7 +32966,6 @@ a.edit-button {
     content: "WELCOME TO AMC";
     opacity: 1;
     font-weight: 700;
-    font-size: 18px;
     position: relative;
   }
 }
@@ -32977,7 +32975,6 @@ a.edit-button {
     content: "WELCOME TO AMC";
     opacity: 0;
     font-weight: 700;
-    font-size: 18px;
     position: relative;
   }
 
@@ -32985,8 +32982,45 @@ a.edit-button {
     content: "WELCOME TO AMC";
     opacity: 1;
     font-weight: 700;
-    font-size: 18px;
     position: relative;
+  }
+}
+
+@media (max-width:675px)
+{
+  @-webkit-keyframes animate {
+    0% {
+      content: "WELCOME TO AMC";
+      opacity: 0;
+      font-weight: 700;
+      font-size: 18px;
+      position: relative;
+    }
+
+    100% {
+      content: "WELCOME TO AMC";
+      opacity: 1;
+      font-weight: 700;
+      font-size: 18px;
+      position: relative;
+    }
+  }
+  @keyframes animate {
+    0% {
+      content: "WELCOME TO AMC";
+      opacity: 0;
+      font-weight: 700;
+      font-size: 18px;
+      position: relative;
+    }
+
+    100% {
+      content: "WELCOME TO AMC";
+      opacity: 1;
+      font-weight: 700;
+      font-size: 18px;
+      position: relative;
+    }
   }
 }
 
