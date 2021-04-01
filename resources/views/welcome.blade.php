@@ -132,7 +132,7 @@
 								{{ __('Already registered?') }}
 							</a>
 			
-							<x-jet-button class="ml-4">
+							<x-jet-button class="ml-4 login-button">
 								{{ __('Submit') }}
 							</x-jet-button>
 						</div>

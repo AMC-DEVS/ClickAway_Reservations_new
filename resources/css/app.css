@@ -1,7 +1,6 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import "flatpickr/dist/flatpickr.min.css";
 
 @font-face {
     font-family: Montserrat;
@@ -15,12 +14,9 @@
     --primary-button: #53d8d8;
     --secondary-button: #f99757;
 }
-
-* {
+html {
     font-family: "Roboto", sans-serif;
 }
-
-/* Company console */
 
 .console_info_wr {
     display: -webkit-box;
@@ -83,55 +79,6 @@ a.edit-button {
     font-size: 2vh !important;
     min-width: 200px;
 }
-
-.res_status-date {
-    width: 100%;
-    text-align: center;
-    position: relative;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -moz-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-align-items: center;
-    -moz-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    padding: 10px 0;
-}
-
-.res_status-buttons {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-}
-
-.input-hours {
-    padding: 0 20px;
-}
-
-div.conf-inputs {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: start;
-    -moz-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    width: 100%;
-    padding: 20px 0;
-}
-/* END Company console */
 
 /* Main page - login  */
 .border-indigo-400 {
@@ -259,15 +206,23 @@ div.conf-inputs {
 }
 
 .auth-card {
-    max-width: 60rem !important;
+    max-width: 900px !important;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
     min-height: 370px;
 
     animation: fadeInDown 2s forwards;
+    background-color:#F5F5F5;
+}
+
+@media (max-width: 675px)
+{
+    .auth-card {
+        min-height: auto;
+    }
 }
 
 .logo-wr svg {
@@ -289,6 +244,7 @@ div.conf-inputs {
 
 .message-wr {
     position: relative;
+    background: none;
 }
 
 .main-message {
@@ -313,14 +269,14 @@ div.conf-inputs {
     0% {
         content: "WELCOME TO AMC";
         opacity: 0;
-
+        font-weight: 700;
         position: relative;
     }
 
     100% {
         content: "WELCOME TO AMC";
         opacity: 1;
-
+        font-weight: 700;
         position: relative;
     }
 }
@@ -369,20 +325,6 @@ div.conf-inputs {
     margin: 15px;
 }
 
-/* Hide arrows form number input */
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-/* Firefox */
-input[type="number"] {
-    -moz-appearance: textfield;
-}
-
 .signup-buttons {
     display: -webkit-box;
     display: -moz-box;
@@ -399,6 +341,10 @@ input[type="number"] {
     align-items: center;
     position: relative;
     max-width: 200px;
+}
+
+.login-button {
+    background-color: #f99757;
 }
 
 .switch-button {
@@ -440,7 +386,7 @@ input[type="number"] {
 /* END Main menu */
 
 /* Glass effect */
-
+/*
 .glass-effect {
     background: #f9f9f980;
     backdrop-filter: blur(7px);
@@ -458,7 +404,7 @@ button.switch-button {
 button {
     height: 40px;
 }
-/* END Glass effect */
+ END Glass effect */
 
 /*  */
 
@@ -623,6 +569,7 @@ button {
 
 /* END Home */
 
+
 /*
 Responsive Design for Confetti.js
 */
@@ -633,39 +580,21 @@ Responsive Design for Confetti.js
     position: fixed;
     width: 100%;
     z-index: 2;
-    margin: -40% -30rem;
-}
+    margin:-40% -30rem;
+  }
+  
+  @media (max-width: 675px)
+  {
+      #canvas {
+          height: 100vh;
+          pointer-events: none;
+          position: fixed;
+          width: 100%;
+          z-index: 2;
+          margin:-80% -10rem;
+      }
+  }
 
-@media (max-width: 675px) {
-    #canvas {
-        height: 100vh;
-        pointer-events: none;
-        position: fixed;
-        width: 100%;
-        z-index: 2;
-        margin: -80% -10rem;
-    }
-}
-
-/*
+  /*
 End Responsive Design for Confetti.js
 */
-/* User reservations */
-
-.status_label {
-    width: 100px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-}
-.status-success {
-    background: green;
-    color: white;
-}
-.status-reject {
-    background: red;
-    color: white;
-}
-/* END User reservations */
