@@ -9,7 +9,7 @@
 				<x-jet-authentication-card-logo />
 			</x-slot>
 			<a href="{{ url('/home') }}" class="text-sm text-gray-700 home-button">Home</a>
-			<h3>You are already loged in</h3>
+			<h3>You are already logged in!</h3>
 		</x-jet-authentication-card>
 	@else
 
@@ -23,12 +23,12 @@
 					<h1 class="main-message"></h1>
 				</div>
 				<hr class="horline" />
-				<span class="secondary_message ml-2 text-sm text-gray-600">Sign in and join hundrends of shops within your area.</span>
-				<span class="signup-text ml-2 text-sm text-gray-600">Don't have an account?</span><br/>
-					<div class="signup-buttons">
-						<x-jet-button class="switch-button ml-4">
+				<span class="secondary_message ml-2 text-sm text-gray-600">Sign in and join hundreds of shops within your area.</span>
+				<span class="signup-text ml-2 text-sm text-gray-600">Don't have an account?</span>
+                <x-jet-button class="switch-button ml-4">
 									{{ __('Register') }}
 						</x-jet-button>
+					<div class="signup-buttons">
 						<i class="fab fa-google"></i>
 						<i class="fab fa-facebook"></i>
 					</div>
@@ -47,7 +47,7 @@
 				<div class="login-wr leftc">
 					<form method="POST" class="show" id="login_form" action="{{ route('login') }}">
 						@csrf
-						<h3 class="form-title">Login Form</h3>
+						<h3 class="form-title">Login</h3>
 						
 						<div>
 							<x-jet-label for="email" value="{{ __('Email') }}" />
@@ -61,7 +61,7 @@
 		
 						<div class="block mt-4">
 							<label for="remember_me" class="flex items-center">
-								<x-jet-checkbox id="remember_me" name="remember" />
+								<input type = "checkbox" id="remember_me" class = "checkbox-login rounded" name="remember">
 								<span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
 							</label>
 						</div>
@@ -84,7 +84,7 @@
 				<div class="register-wr leftc">
 					<form method="POST" class="hide" id="register_form" action="{{ route('register') }}">
 						@csrf
-						<h3 class="form-title">Register Form</h3>
+						<h3 class="form-title">Register</h3>
 			
 						<div>
 							<x-jet-label for="name" value="Full name" />

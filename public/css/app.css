@@ -32959,6 +32959,7 @@ a.edit-button {
     content: "WELCOME TO AMC";
     opacity: 0;
     font-weight: 700;
+    font-size: 18px;
     position: relative;
   }
 
@@ -32966,6 +32967,7 @@ a.edit-button {
     content: "WELCOME TO AMC";
     opacity: 1;
     font-weight: 700;
+    font-size: 18px;
     position: relative;
   }
 }
@@ -32975,6 +32977,7 @@ a.edit-button {
     content: "WELCOME TO AMC";
     opacity: 0;
     font-weight: 700;
+    font-size: 18px;
     position: relative;
   }
 
@@ -32982,6 +32985,7 @@ a.edit-button {
     content: "WELCOME TO AMC";
     opacity: 1;
     font-weight: 700;
+    font-size: 18px;
     position: relative;
   }
 }
@@ -33031,11 +33035,16 @@ a.edit-button {
 
 .signup-buttons {
   display: flex;
-  justify-content: space-between;
-  -moz-align-items: center;
+  justify-content: center;
   align-items: center;
+  margin: 0.275rem auto;
+  padding: 0;
   position: relative;
   max-width: 200px;
+}
+
+.signup-buttons i {
+  padding: 5px;
 }
 
 .login-button {
@@ -33052,8 +33061,27 @@ a.edit-button {
   margin: 0;
 }
 
+.checkbox-login:checked {
+  background-color: #f99757;
+  color: #f99757;
+  outline: 0;
+}
+
+.checkbox-login:checked:after {
+  background-color: #f99757;
+  color: #f99757;
+  outline: 0;
+}
+
+.checkbox-login:focus {
+  background-color: #f99757;
+  color: #f99757;
+  outline: 0;
+}
+
 .secondary_message {
   padding: 10px 0;
+  font-style: italic;
 }
 
 .secondary_message,
