@@ -256,6 +256,9 @@ a.edit-button {
 .main-message::before {
     content: "";
     animation: animate 5s infinite;
+    -webkit-animation: animate 5s infinite;
+    -moz-animation: animate 5s infinite;
+    -o-animation: animate 5s infinite;
     animation-delay: 0.5s;
     position: absolute;
     width: 100%;
@@ -270,7 +273,6 @@ a.edit-button {
         content: "WELCOME TO AMC";
         opacity: 0;
         font-weight: 700;
-        
         position: relative;
     }
 
@@ -278,7 +280,6 @@ a.edit-button {
         content: "WELCOME TO AMC";
         opacity: 1;
         font-weight: 700;
-        
         position: relative;
     }
 }
@@ -429,7 +430,7 @@ a.edit-button {
 /* END Main menu */
 
 /* Glass effect */
-/*
+
 .glass-effect {
     background: #f9f9f980;
     backdrop-filter: blur(7px);
@@ -447,7 +448,7 @@ button.switch-button {
 button {
     height: 40px;
 }
- END Glass effect */
+ /*END Glass effect */
 
 /*  */
 

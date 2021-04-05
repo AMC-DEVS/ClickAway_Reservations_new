@@ -32942,8 +32942,10 @@ a.edit-button {
 
 .main-message::before {
   content: "";
+  animation: animate 5s infinite;
   -webkit-animation: animate 5s infinite;
-          animation: animate 5s infinite;
+  -moz-animation: animate 5s infinite;
+  -o-animation: animate 5s infinite;
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
   position: absolute;
@@ -33150,25 +33152,27 @@ a.edit-button {
 
 /* Glass effect */
 
-/*
 .glass-effect {
-    background: #f9f9f980;
-    backdrop-filter: blur(7px);
-    box-shadow: 3px 4px 7px #0003;
-    border-radius: 0px 0px 17px 17px;
+  background: #f9f9f980;
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+  box-shadow: 3px 4px 7px #0003;
+  border-radius: 0px 0px 17px 17px;
 }
 
 button.switch-button {
-    background-color: var(--primary-button);
+  background-color: var(--primary-button);
 }
 
 .submit-button {
-    background-color: var(--secondary-button);
+  background-color: var(--secondary-button);
 }
+
 button {
-    height: 40px;
+  height: 40px;
 }
- END Glass effect */
+
+/*END Glass effect */
 
 /*  */
 
