@@ -32733,7 +32733,7 @@ select {
   --secondary-button: #f99757;
 }
 
-html {
+* {
   font-family: "Roboto", sans-serif;
 }
 
@@ -32900,13 +32900,14 @@ a.edit-button {
   align-items: center;
   flex-wrap: wrap;
   min-height: 370px;
+  animation: fadeInDown 2s forwards;
+  -o-animation: fadeInDown 2s forwards;
+  -moz-animation: fadeInDown 2s forwards;
   -webkit-animation: fadeInDown 2s forwards;
-          animation: fadeInDown 2s forwards;
-  background-color:#F5F5F5;
+  background-color: #f5f5f5;
 }
 
-@media (max-width: 675px)
-{
+@media (max-width: 675px) {
   .auth-card {
     min-height: auto;
   }
@@ -32988,8 +32989,7 @@ a.edit-button {
   }
 }
 
-@media (max-width:675px)
-{
+@media (max-width: 675px) {
   @-webkit-keyframes animate {
     0% {
       content: "WELCOME TO AMC";
@@ -33338,18 +33338,17 @@ Responsive Design for Confetti.js
   position: fixed;
   width: 100%;
   z-index: 2;
-  margin:-40% -30rem;
+  margin: -40% -30rem;
 }
 
-@media (max-width: 675px)
-  {
+@media (max-width: 675px) {
   #canvas {
     height: 100vh;
     pointer-events: none;
     position: fixed;
     width: 100%;
     z-index: 2;
-    margin:-80% -10rem;
+    margin: -80% -10rem;
   }
 }
 
@@ -192821,3 +192820,4 @@ End Responsive Design for Confetti.js
             animation: bounce 1s infinite;
   }
 }
+
