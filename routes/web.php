@@ -19,7 +19,7 @@ use App\Http\Controllers\CompanyProfileController;
 // Welcome page
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 
 // User authentication
