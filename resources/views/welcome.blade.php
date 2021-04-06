@@ -20,7 +20,7 @@
 				<x-jet-authentication-card-logo />
 				<hr class="horline" />
 				<div class="message-wr">
-					<h1 class="main-message"></h1>
+					<h1 class="main-message">WELCOME TO AMC</h1>
 				</div>
 				<hr class="horline" />
 				<span class="secondary_message ml-2 text-sm text-gray-600">Sign in and join hundreds of shops within your area.</span>
