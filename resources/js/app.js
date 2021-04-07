@@ -42,28 +42,68 @@ if( buttonswitch.length > 0 ){
     });
 }
 
-// Reservation Calendar
+//---------- Reservation Calendar --------------
+
+// Disabled Saturday and Sunday
 flatpickr("#pickdate", {
-    dateFormat: "Y-m-d",
+    altInput: true,
+    altFormat: "D, F j, Y",
+    dateFormat: "D, F j, Y",
+    monthSelectorType: "dropdown",
+    "disable": [
+      function(date) {
+          // return true to disable
+          return (date.getDay() === 0 || date.getDay() === 6);
+
+      }
+    ],
+    "locale": {
+        "firstDayOfWeek": 1 // start week on Monday
+    }
 });
+// Disabled Sunday
+flatpickr("#pickdate1", {
+    altInput: true,
+    altFormat: "D, F j, Y",
+    dateFormat: "D, F j, Y",
+    monthSelectorType: "dropdown",
+    "disable": [
+      function(date) {
+          // return true to disable
+          return date.getDay() === 0;
+
+      }
+    ],
+    "locale": {
+        "firstDayOfWeek": 1 // start week on Monday
+    }
+});
+
+// Time
 
 flatpickr("#picktime15", {
     enableTime: true,
     noCalendar: true,
     dateFormat: "H:i",
-    minuteIncrement: "15"
+    minuteIncrement: "15",
+    minTime: "09:00",
+    maxTime: "21:00",    
 });
 flatpickr("#picktime30", {
     enableTime: true,
     noCalendar: true,
     dateFormat: "H:i",
-    minuteIncrement: "60"
+    minuteIncrement: "60",
+    minTime: "09:00",
+    maxTime: "21:00",
 });
 flatpickr("#picktime60", {
     enableTime: true,
     noCalendar: true,
     dateFormat: "H:i",
-    minuteIncrement: "60"
+    minuteIncrement: "60",
+    minTime: "09:00",
+    maxTime: "21:00",
 });
 
 // END Reservation Calendar

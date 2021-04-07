@@ -97,21 +97,28 @@ class ReservationController extends Controller
             'date' => $data['date'],
         ]);
         $user_num = auth()->user()->phone_num;
-        
+ 
         $user_name = auth()->user()->name;
         
-        $message = $user_name.' We are able to verify your reservation.'.$data['time'].''.$data['date'];
-        $sms_data = array(
+        $message = $user_name.' We are able to verify your reservation.'.$data['time'].' '.$data['date'];
+
+     	$sms_data = array(
             array(
-                'destination' => '6981300771',
-                'message' => $message,
-            )
+                'destination' => $user_num,
+                'message' =>  $message
+            ),
         );
-        $company = Company::all()->whereIn('company_id', $data['company_id']);
-        $company_name = $company->pluck('company_name');
         $api_token = "815d060b35159c3643003bcddf3cdf716a80b8269914cfde30c8b91a8fa31817";
-        $this->sendSMSMulti($sms_data, $api_token, $company_name, -1, 1);
-        return redirect('home');
+        
+        $company = Company::all()->whereIn('id', $data['company_id']);
+        $company_name = $company->pluck('company_name')[0];
+        
+        $api_token = "815d060b35159c3643003bcddf3cdf716a80b8269914cfde30c8b91a8fa31817";
+        
+        $sender_name = $company_name;		// Max 11 characters
+
+        $res = $this->sendSMSMulti($sms_data, $api_token, $sender_name, 1);
+	    return redirect('home');
     }
 
       
@@ -119,8 +126,8 @@ class ReservationController extends Controller
 	//-------------------------------------------------------------------------------------------------------
 	private $siteURL = "https://sms.liveall.eu/apiext/Sendout/SendJSMS";
 	//-------------------------------------------------------------------------------------------------------
-	public function sendSMSMulti($smsData, $api_token, $sender_name, $pricecat, $sendon = NULL)
-	{     
+    public function sendSMSMulti($smsData, $api_token, $sender_name, $pricecat = -1, $sendon = NULL)
+	{
 		$payloadObj = array(
 			'apitoken'		=>	$api_token,
 			'senderid'		=>	$sender_name,

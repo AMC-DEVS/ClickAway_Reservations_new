@@ -2,6 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import "flatpickr/dist/themes/confetti";
+
 @font-face {
     font-family: Montserrat;
     src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
@@ -387,6 +389,30 @@ a.edit-button {
 .switch-button {
     background-color: var(--primary-button);
     margin: 0;
+}
+
+.status-success {
+    color: green;
+}
+.status-fail {
+    color: red;
+}
+
+.status-wait {
+    color: var(--secondary-button);
+}
+
+.status-success,
+.status-fail {
+    color: green;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    background: white;
+    padding: 0 10px;
+    border-radius: 10px;
+    justify-content: center;
+    margin: auto;
 }
 
 .checkbox-login:checked {
