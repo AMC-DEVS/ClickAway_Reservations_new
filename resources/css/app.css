@@ -772,3 +772,51 @@ Media Queries
         align-items: center;
     }
 }
+
+@media (min-width:675px) { /* Medium Screens */
+    #customcity {
+        max-width:60%;
+        margin: 0 auto;
+    }
+    label {
+        text-align: center;
+    }
+    .selected-city {
+        max-width: 60%;
+        margin: 0 auto;
+        border-radius: 10px;
+        text-align: center;
+        color: #ece3e2;
+        font-size: 28px;
+        font-weight: 700;
+    }
+    .selected-city-long {
+        max-width: 60%;
+        margin: 0 auto;
+        border-radius: 10px;
+        text-align: center;
+        color: #ece3e2;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .select-category, .select-city {
+        display: flex;
+        justify-content: center;
+    }
+    .show-card-mobile {
+        display: flex;
+        justify-content:space-between;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .show-card-mobile-button {
+        margin: 1rem auto;
+    }
+    .company-heading {
+        align-items: center;
+        padding: 2px;
+    }
+    .text-category, .text-city {
+        text-align: center;
+    }
+}
