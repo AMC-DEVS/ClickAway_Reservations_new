@@ -1,6 +1,6 @@
 <div>
         <div class="homesearch-wr">
-            <div class="mb-8">
+            <div class="mb-8 select-city">
                 <select name="category" wire:model="city" 
                     class="p-2 px-4 py-2 pr-8 leading-tight bg-white border border-gray-400 rounded shadow appearance-none hover:border-gray-500 focus:outline-none focus:shadow-outline">
                    
@@ -9,12 +9,12 @@
                     @endforeach
                 </select>
             </div>
-            <x-jet-label for="customcity" value="Choose you city" />
-            <x-jet-input id="customcity" class="block mt-1 w-full" type="text" wire:model="city" name="customcity"  placeholder="Search a city" :value="old('customcity')" autofocus autocomplete="customcity" />
+            <x-jet-label for="customcity" value="Search for your city" />
+            <x-jet-input id="customcity" class="block mt-1" type="text" wire:model="city" name="customcity"  placeholder="Search a city" :value="old('customcity')" autofocus autocomplete="customcity" />
         </div>
         
         @if(count($categories) > 0)
-            <div class="mb-8">
+            <div class="mb-8 select-category">
                 <select name="category" wire:model="category_id" 
                     class="p-2 px-4 py-2 pr-8 leading-tight bg-white border border-gray-400 rounded shadow appearance-none hover:border-gray-500 focus:outline-none focus:shadow-outline">
                     <option value=''>Choose a category</option>
@@ -31,14 +31,13 @@
         
             <div class="glass-effect overflow-hidden shadow-xl sm:rounded-lg p-10">
                 <div class="company_card">  
-                    <div class="company_card_left">
-                        <h3  class="font-semibold text-xl ">{{$company->company_name}}</h3>
-                        
-                        <p>{{$company->category()->pluck('title')[0]}}</p>
-                        <p>{{$company->city}}</p>
+                    <div class="show-card-mobile">
+                        <h2  class="font-semibold text-lg company-heading">{{$company->company_name}}</h2>
+                        <p class="text-left text-category">{{$company->category()->pluck('title')[0]}}</p>
+                        <p class="text-left text-city">{{$company->city}}</p>
                     </div>
-                    <div class="company_card_right">
-                    <x-jet-button class="ml-4">
+                    <div class="company_card_right show-card-mobile-button">
+                    <x-jet-button>
                         <a href="/company_profile/{{$company->id}}">
                         Make a reservation
                         </a>
@@ -51,12 +50,12 @@
             @endforeach
 
         @elseif($city === "")
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-10">
-                Select a city
+            <div class="selected-city">
+                No City Selected
             </div>
         @else
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-10">
-                No shops available in this city.
+            <div class="selected-city-long">
+                No Shops Available In This City
             </div>
         @endif
 </div>
