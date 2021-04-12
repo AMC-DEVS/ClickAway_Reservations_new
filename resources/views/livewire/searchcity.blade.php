@@ -1,4 +1,5 @@
 <div>
+    <div class = "border-dashboard-box">
         <div class="homesearch-wr">
             <div class="mb-8 select-city">
                 <select name="category" wire:model="city" 
@@ -24,7 +25,7 @@
                 </select>
             </div>
         @endif
-
+    </div>
     @if($companies->count() > 0)
 
             @foreach($companies->whereIn('city', $city)->whereIn('category_id', $category_id)  as $company)

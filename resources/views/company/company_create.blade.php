@@ -3,14 +3,14 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Company registration
+            Company Registration
         </h2>
     </x-slot>
 
     <x-jet-authentication-card>
             <x-slot name="logo">
                 <x-jet-authentication-card-logo />
-                <h3>Company registration</h3>
+                <h3>Company Registration</h3>
             </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
@@ -80,7 +80,9 @@
                 <div class="mt-4">
                     <x-jet-label for="terms">
                         <div class="flex items-center">
-                            <x-jet-checkbox name="terms" id="terms"/>
+                        <label for="terms" class="flex items-center">
+								<input type = "checkbox" id="terms" class = "checkbox-login rounded" name="terms">
+							</label>
 
                             <div class="ml-2">
                                 {!! __('I agree to the :terms_of_service and :privacy_policy', [

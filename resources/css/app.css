@@ -820,3 +820,20 @@ Media Queries
         text-align: center;
     }
 }
+
+/* Border Dashboard */
+
+.border-dashboard-box {
+    padding: 20px;
+    background: whitesmoke;
+    backdrop-filter: blur(7px);
+    box-shadow: 3px 4px 7px #0003;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.selected-city, .selected-city-long {
+    font-size: 60px;
+    opacity: 0.6;
+    margin: 4rem auto;
+}

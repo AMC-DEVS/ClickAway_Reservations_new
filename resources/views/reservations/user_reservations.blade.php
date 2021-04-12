@@ -30,7 +30,7 @@
                             <p>{{ $date }}</p>
                             <p>{{ $time }}</p>
                         </div>
-                        <span class="status_label status-success">Veryfied</span>
+                        <span class="status_label status-success">Verified</span>
                     </div></br>
                 @endforeach  
                 @else

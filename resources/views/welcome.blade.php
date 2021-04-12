@@ -114,7 +114,9 @@
 							<div class="mt-4">
 								<x-jet-label for="terms">
 									<div class="flex items-center">
-										<x-jet-checkbox name="terms" id="terms"/>
+									<label for="terms" class="flex items-center">
+									<input type = "checkbox" id="terms" class = "checkbox-login rounded" name="terms">
+									</label>
 			
 										<div class="ml-2">
 											{!! __('I agree to the :terms_of_service and :privacy_policy', [
