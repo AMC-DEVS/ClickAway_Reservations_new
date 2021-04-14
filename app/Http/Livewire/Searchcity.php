@@ -16,6 +16,7 @@ class Searchcity extends Component
     public function render()
     {
         $city = $this->city;
+     
         $category_id = $this->category_id;
         
         $allCompanies = Company::all();

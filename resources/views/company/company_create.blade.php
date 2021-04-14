@@ -42,8 +42,15 @@
                 <x-jet-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')"/>
             </div>
             <div class="mt-4">
-                <x-jet-label for="city" value="City" />
                 <x-jet-input id="city" class="block mt-1 w-full" type="text" name="city" :value="old('city')"/>
+                <x-jet-label  for="city" value="City"/>
+                <select  wire:model="city" >
+                    <option value="">Select City:</option>
+                    @foreach($cities as $city)
+                        <option value='{{ $city->city }}'>{{ $city->city }}</option>
+                    @endforeach
+
+                </select>
             </div>
             <div class="mt-4">
                 <x-jet-label for="post_code" value="Post code" />

@@ -51,5 +51,11 @@ class Company extends Model
     {
         return $this->belongsTo(Category::class);
     }
+  
+    // A company belongs to a city
+    public function city() 
+    {
+        return $this->belongsTo(Category::class);
+    }
 
 }

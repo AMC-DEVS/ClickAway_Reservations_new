@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Company;
 use App\Models\Category;
+use App\Models\City;
 
 
 class CompanyController extends Controller
@@ -24,8 +25,8 @@ class CompanyController extends Controller
     public function create()
     {    
         $categories = Category::all();       
-        
-        return view('company.company_create', compact('categories'));
+        $cities = City::all();
+        return view('company.company_create', compact('categories', 'cities'));
     
     }
     
