@@ -1,4 +1,4 @@
-<div class="glass-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-5">
+<div class="navigation-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-5">
     <div class="form-inputs conf-inputs">
         <div class="input input-hours">
             <label for="open_time">Opening Time</label>

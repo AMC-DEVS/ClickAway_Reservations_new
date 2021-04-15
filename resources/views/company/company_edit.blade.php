@@ -2,7 +2,7 @@
     <x-app-layout>
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Edit {{$company->company_name}} informations
+                Edit {{$company->company_name}} Information
             </h2>
         </x-slot>
         
@@ -12,7 +12,7 @@
             <div class="image_upload-wr">
                 @livewire('image-upload')
             </div>
-            <h1>Edit company informations</h1>
+            <h1>Edit Company Information</h1>
 
             <x-slot name="logo">
                 <!-- <x-jet-authentication-card-logo /> -->

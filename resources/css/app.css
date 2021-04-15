@@ -934,3 +934,9 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+/* Reservation requested (Accept & Deny) */
+.reservation-buttons {
+    display: flex;
+    justify-content:space-evenly;
+}

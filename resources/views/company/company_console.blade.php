@@ -18,13 +18,13 @@
                 </div>
 
                 <div class="console_info">
-                    <h3  class="font-semibold text-xl ">Company name</h3>
+                    <h3  class="font-semibold text-xl ">Company Name</h3>
                     <p>{{$company_name}}</p><br/>
                 
                 </div>
                 
                 <div class="console_info">  
-                    <h3  class="font-semibold text-xl ">Company email</h3>
+                    <h3  class="font-semibold text-xl ">Company Email</h3>
                     <p>{{$company_email}}</p>
                 </div>
                 
@@ -34,17 +34,17 @@
                 </div>
 
                 <div class="console_info">  
-                    <h3  class="font-semibold text-xl ">Company location</h3>
+                    <h3  class="font-semibold text-xl ">Company Location</h3>
                     <p>{{$city}}</p>
                 </div>
 
                 <div class="console_info">  
-                    <h3  class="font-semibold text-xl ">Company post code</h3>
+                    <h3  class="font-semibold text-xl ">Company Postal Code</h3>
                     <p>{{$post_code}}</p>
                 </div>
 
                 <div class="console_info">  
-                    <h3  class="font-semibold text-xl ">Company address</h3>
+                    <h3  class="font-semibold text-xl ">Company Address</h3>
                     <p>{{$address}}</p>
                 </div>
 
@@ -53,14 +53,14 @@
     </div>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <h1 class="font-semibold text-xl text-gray-800 leading-tight" >Configurations</h1></br>
+            <h1 class="font-semibold text-xl text-gray-800 leading-tight">Configurations</h1></br>
      
             @livewire('company-config')
         </div>
     </div>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <h1 class="font-semibold text-xl text-gray-800 leading-tight" >Reservations</h1></br>
+            <h1 class="font-semibold text-xl text-gray-800 leading-tight">Reservations</h1></br>
            
            @if($reservations != null)
             @foreach($reservations as $reservation)
@@ -72,7 +72,7 @@
                 {{  $user_name = $users->whereIn('id',$user_id)->pluck('name')[0] }}
                 </div>                
                     <div class="console_info">
-                        <h3 class="font-semibold text-xl ">User name</h3>
+                        <h3 class="font-semibold text-xl ">Username</h3>
                         <p>{{ $user_name }}</p>
                     </div>
 
@@ -82,7 +82,7 @@
                     </div>
                     <div class="res_status-wr">
                         <small class="res_status-date"><b class="mr-1">Received at: </b>{{$reservation->created_at}}</small>
-                        <div class="res_status-buttons">
+                        <div class="res_status-buttons reservation-buttons">
                             <x-jet-button class="ml-4 status_label status-success">
                                 Verify                       
                             </x-jet-button>

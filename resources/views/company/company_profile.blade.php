@@ -7,16 +7,16 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10 navigation-effect">
 
                 <div class="console_info">
-                    <h3  class="font-semibold text-xl ">Company name</h3>
+                    <h3  class="font-semibold text-xl ">Company Name</h3>
                     <p>{{$company_name}}</p><br/>
                 
                 </div>
                 
                 <div class="console_info">  
-                    <h3  class="font-semibold text-xl ">Company email</h3>
+                    <h3  class="font-semibold text-xl ">Company Email</h3>
                     <p>{{$company_email}}</p>
                 </div>
                 
@@ -26,28 +26,28 @@
                 </div>
 
                 <div class="console_info">  
-                    <h3  class="font-semibold text-xl ">Company location</h3>
+                    <h3  class="font-semibold text-xl ">Company Location</h3>
                     <p>{{$city}}</p>
                 </div>
 
                 <div class="console_info">  
-                    <h3  class="font-semibold text-xl ">Company post code</h3>
+                    <h3  class="font-semibold text-xl ">Company Postal Code</h3>
                     <p>{{$post_code}}</p>
                 </div>
 
                 <div class="console_info">  
-                    <h3  class="font-semibold text-xl ">Company address</h3>
+                    <h3  class="font-semibold text-xl ">Company Address</h3>
                     <p>{{$address}}</p>
                 </div>
                
                 <div class="console_info">  
-                    <h3  class="font-semibold text-xl ">Company address</h3>
+                    <h3  class="font-semibold text-xl ">Company Telephone</h3>
                     <p>{{$phone_num}}</p>
                 </div>
 
             </div>
             </br>
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10 navigation-effect">
                 <x-jet-validation-errors class="mb-4" />
 
                 <form method="POST" action="{{ route('reservation_save') }}">
@@ -89,7 +89,9 @@
                         <div class="mt-4">
                             <x-jet-label for="terms">
                                 <div class="flex items-center">
-                                    <x-jet-checkbox name="terms" id="terms"/>
+                                    <label for="terms" class="flex items-center">
+                                        <input type = "checkbox" id="terms" class = "checkbox-login rounded" name="terms">
+                                    </label>
 
                                     <div class="ml-2">
                                         {!! __('I agree to the :terms_of_service and :privacy_policy', [

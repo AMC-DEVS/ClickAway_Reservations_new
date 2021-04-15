@@ -34502,6 +34502,13 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+/* Reservation requested (Accept & Deny) */
+
+.reservation-buttons {
+  display: flex;
+  justify-content:space-evenly;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -193966,4 +193973,3 @@ input[type=number] {
             animation: bounce 1s infinite;
   }
 }
-
