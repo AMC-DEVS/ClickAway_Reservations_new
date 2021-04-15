@@ -940,3 +940,13 @@ input[type=number] {
     display: flex;
     justify-content:space-evenly;
 }
+
+/* Verify or Reject future reservations (Company) */
+@media (max-width:675px)
+{
+    .company-reservation-console {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

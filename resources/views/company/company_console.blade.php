@@ -64,23 +64,23 @@
            
            @if($reservations != null)
             @foreach($reservations as $reservation)
-            <div class="navigation-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-5">
+            <div class="navigation-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-5 company-reservation-console">
 
                 <div style = "display:none;">
                 {{  $user_id = $reservation->user_id }}
                 {{  $time = $reservation->time }}
                 {{  $user_name = $users->whereIn('id',$user_id)->pluck('name')[0] }}
                 </div>                
-                    <div class="console_info">
+                    <div class="console_info  mx-auto my-0 text-center">
                         <h3 class="font-semibold text-xl ">Username</h3>
                         <p>{{ $user_name }}</p>
                     </div>
 
-                    <div class="console_info">
+                    <div class="console_info mx-auto my-0 text-center">
                         <h3  class="font-semibold text-xl ">Date & Time</h3>
                         <p>{{ $time }}</p>
                     </div>
-                    <div class="res_status-wr">
+                    <div class="res_status-wr mx-auto my-0 text-center">
                         <small class="res_status-date"><b class="mr-1">Received at: </b>{{$reservation->created_at}}</small>
                         <div class="res_status-buttons reservation-buttons">
                             <x-jet-button class="ml-4 status_label status-success">
@@ -96,7 +96,7 @@
                 @else
                     <div class="navigation-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10">
                         <div class="console_info">
-                            <h3 class="font-semibold text-xl">You have not any reservations yet! :-)</h3>
+                            <h3 class="font-semibold text-xl">You don't have any reservations yet! :-)</h3>
                         </div>
                     </div>
             @endif

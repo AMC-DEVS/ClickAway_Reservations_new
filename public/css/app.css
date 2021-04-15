@@ -34509,6 +34509,17 @@ input[type=number] {
   justify-content:space-evenly;
 }
 
+/* Verify or Reject future reservations (Company) */
+
+@media (max-width:675px)
+{
+  .company-reservation-console {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -193973,3 +193984,4 @@ input[type=number] {
             animation: bounce 1s infinite;
   }
 }
+
