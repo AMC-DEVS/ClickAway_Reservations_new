@@ -7,8 +7,8 @@
  
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <a class="glass-effect edit-button" href="{{ route('company_profile_edit', $company->pluck('id')[0]) }}"><small>Edit your informations</small></a>
-            <div class="glass-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10">
+            <a class="navigation-effect edit-button" href="{{ route('company_profile_edit', $company->pluck('id')[0]) }}"><small>Edit your informations</small></a>
+            <div class="navigation-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10">
                 <div class="console_info">
                     <img src="/storage/{{ $company->pluck('profile_photo_path')[0] }}" style="width:150px;" alt=" {{$company->pluck('company_name')[0]}}" srcset="">
                 </div>
@@ -64,7 +64,7 @@
            
            @if($reservations != null)
             @foreach($reservations as $reservation)
-            <div class="glass-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-5">
+            <div class="navigation-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-5">
 
                 <div style = "display:none;">
                 {{  $user_id = $reservation->user_id }}
@@ -94,7 +94,7 @@
                 </div></br>
                 @endforeach  
                 @else
-                    <div class="glass-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10">
+                    <div class="navigation-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10">
                         <div class="console_info">
                             <h3 class="font-semibold text-xl">You have not any reservations yet! :-)</h3>
                         </div>

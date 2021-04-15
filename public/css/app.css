@@ -34020,7 +34020,7 @@ a.edit-button {
 
 /* Glass effect */
 
-.glass-effect {
+.navigation-effect {
   background: #f9f9f980;
   -webkit-backdrop-filter: blur(7px);
           backdrop-filter: blur(7px);

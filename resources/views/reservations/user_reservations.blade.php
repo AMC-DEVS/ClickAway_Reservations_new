@@ -13,7 +13,7 @@
 
             @if($user->reservation != null)
                 @foreach($user->reservation as $reservation)
-                    <div class="glass-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-5">
+                    <div class="navigation-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-5">
 
                         <div style = "display:none;">
                             {{  $company = $reservation->company}}

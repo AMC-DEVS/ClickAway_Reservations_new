@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 main-menu glass-effect">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 main-menu navigation-effect">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -17,7 +17,7 @@
                     </x-jet-nav-link>
                    
                     <x-jet-nav-link href="{{ route('user_reservations') }}" :active="request()->routeIs('user_reservations')">
-                        My reservations
+                        My Reservations
                     </x-jet-nav-link>
                     
                     @if(auth()->user()->company()->count()>0)

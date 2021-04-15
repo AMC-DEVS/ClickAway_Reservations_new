@@ -469,12 +469,14 @@ a.edit-button {
 
 /* Glass effect */
 
-.glass-effect {
+
+.navigation-effect {
     background: #f9f9f980;
     backdrop-filter: blur(7px);
     box-shadow: 3px 4px 7px #0003;
     border-radius: 0px 0px 17px 17px;
 }
+
 
 button.switch-button {
     background-color: var(--primary-button);
