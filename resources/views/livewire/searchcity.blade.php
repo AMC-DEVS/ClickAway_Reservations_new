@@ -49,7 +49,7 @@
             
                 @if($companies->whereIn('city', $city)->whereIn('category_id', $category_id)->count() > 0)
                 <div class="glass-effect overflow-hidden shadow-xl sm:rounded-lg p-10">
-                    <div class="company_card">  
+                    <div class="company_card items-center">  
                         <div class="company_card_left">
                             <h3  class="font-semibold text-xl ">{{$company->company_name}}</h3>
                             

@@ -7,13 +7,13 @@
  
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <a class="navigation-effect edit-button" href="{{ route('company_profile_edit', $company->pluck('id')[0]) }}"><small>Edit your informations</small></a>
+            <a class="navigation-effect edit-button" href="{{ route('company_profile_edit', $company->pluck('id')[0]) }}"><small>Edit your Information</small></a>
             <div class="navigation-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10">
                 <div class="console_info">
                     <img src="/storage/{{ $company->pluck('profile_photo_path')[0] }}" style="width:150px;" alt=" {{$company->pluck('company_name')[0]}}" srcset="">
                 </div>
                 <div class="console_info">
-                    <h3 class="font-semibold text-xl ">Owner name</h3>
+                    <h3 class="font-semibold text-xl ">Owner Name</h3>
                     <p>{{$ownername}}</p><br/>
                 </div>
 
