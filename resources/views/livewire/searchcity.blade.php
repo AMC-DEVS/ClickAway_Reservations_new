@@ -48,8 +48,8 @@
             @foreach($companies->whereIn('city', $city)->whereIn('category_id', $category_id)  as $company)
             
                 @if($companies->whereIn('city', $city)->whereIn('category_id', $category_id)->count() > 0)
-                <div class="glass-effect overflow-hidden shadow-xl sm:rounded-lg p-10">
-                    <div class="company_card items-center">  
+                <div class="navigation-effect overflow-hidden shadow-xl sm:rounded-lg p-10 centered-text">
+                    <div class="company_card items-center displayed-shops">  
                         <div class="company_card_left">
                             <h3  class="font-semibold text-xl ">{{$company->company_name}}</h3>
                             
@@ -71,21 +71,21 @@
             @endforeach
             
             @if($category_id === "")
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-10">
-                Select a category category.
+            <div class="selected-city">
+                Select a category
             </div>
            
             @else
             @if($companies->whereIn('city', $city)->whereIn('category_id', $category_id)->count() === 0)
 
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-10">
+            <div class="selected-city-long">
                 No shops available in this category.
             </div>
           
             @endif
             @endif
         @elseif($city === "" )
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-10">
+            <div class= "selected-city">
                 Select a city
             </div>
         @endif

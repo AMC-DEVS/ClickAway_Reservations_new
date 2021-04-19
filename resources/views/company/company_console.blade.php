@@ -83,10 +83,10 @@
                     <div class="res_status-wr mx-auto my-0 text-center">
                         <small class="res_status-date"><b class="mr-1">Received at: </b>{{$reservation->created_at}}</small>
                         <div class="res_status-buttons reservation-buttons">
-                            <x-jet-button class="ml-4 status_label status-success">
+                            <x-jet-button class="ml-4 status_label">
                                 Verify                       
                             </x-jet-button>
-                            <x-jet-button class="ml-4 status_label status-reject">
+                            <x-jet-button class="ml-4 status_label">
                                 Reject                       
                             </x-jet-button>
                         </div>
@@ -96,7 +96,7 @@
                 @else
                     <div class="navigation-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-10">
                         <div class="console_info">
-                            <h3 class="font-semibold text-xl">You don't have any reservations yet! :-)</h3>
+                            <h3 class="font-semibold text-xl">You don't have any reservations yet! :-(</h3>
                         </div>
                     </div>
             @endif

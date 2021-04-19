@@ -34390,19 +34390,9 @@ Media Queries
 
 /* Border Dashboard */
 
-.border-dashboard-box {
-  padding: 20px;
-  background: whitesmoke;
-  -webkit-backdrop-filter: blur(7px);
-          backdrop-filter: blur(7px);
-  box-shadow: 3px 4px 7px #0003;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-
 .selected-city, .selected-city-long {
   font-size: 60px;
-  opacity: 0.6;
+  opacity: 0.8;
   margin: 4rem auto;
 }
 
@@ -34517,6 +34507,28 @@ input[type=number] {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .homesearch-wr {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .selected-city, .selected-city-long {
+    font-size: 40px;
+    opacity: 0.8;
+    margin: 4rem auto;
+  }
+
+  .displayed-shops {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  .centered-text {
+    text-align: center;
   }
 }
 
@@ -193984,4 +193996,3 @@ input[type=number] {
             animation: bounce 1s infinite;
   }
 }
-
