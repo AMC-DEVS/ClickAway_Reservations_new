@@ -24,13 +24,13 @@ optout.networkadvertising.org and www.youronlinechoices.com
 Use of Your Personal information
 In general, personal information you submit to us is used either to respond to requests that you make, aid us in serving you better, or market our Services. We use your personal information in the following ways:</p>
 
-● Operate, maintain, and improve our site(s), products, and services;
-● Respond to comments and questions and provide customer service;
-● Link or combine user information with other personal information we get from third parties, to help understand your needs
+<li> Operate, maintain, and improve our site(s), products, and services;</li>
+<li> Respond to comments and questions and provide customer service;</li>
+<li>Link or combine user information with other personal information we get from third parties, to help understand your needs</li>
 and provide you with better service;
-● Develop, improve, and deliver marketing and advertising for the Services;
-● Provide and deliver products and services you request;
-● Identify you as a user in our system;
+<li>Develop, improve, and deliver marketing and advertising for the Services;</li>
+<li>Provide and deliver products and services you request;</li>
+<li>Identify you as a user in our system;</li>
 
 <p>We may store and process your personal information on servers located in both the United States and Europe. We may also create anonymous data records from your personal information by completely excluding information (such as your name) that makes the data personally identifiable to you. We use this anonymous data to analyze request and usage patterns so that we may enhance the content of our Services and improve Site functionality. We reserve the right to use anonymous data for any purpose and disclose anonymous data to third parties at our sole discretion.
 We may receive testimonials and comments from users who have had positive experiences with our Services. We may publish such content. When we publish this content, we may identify our users by their first and last name. We obtain the user's consent prior to posting this information along with the testimonial.
