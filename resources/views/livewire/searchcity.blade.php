@@ -48,8 +48,13 @@
             @foreach($companies->whereIn('city', $city)->whereIn('category_id', $category_id)  as $company)
             
                 @if($companies->whereIn('city', $city)->whereIn('category_id', $category_id)->count() > 0)
-                <div class="navigation-effect overflow-hidden shadow-xl sm:rounded-lg p-10 centered-text">
-                    <div class="company_card items-center displayed-shops">  
+                <div class="glass-effect overflow-hidden shadow-xl sm:rounded-lg p-10">
+                    <div class="company_card">  
+                        @if($company->profile_photo_path)
+                            <img style="width: 80px; height:80px; object-fit: cover;" src="/storage/{{$company->profile_photo_path}}" alt="{{$company->company_name}}">
+                            @else
+                            <div class="company-default">{{$company->company_name}}</div>
+                        @endif
                         <div class="company_card_left">
                             <h3  class="font-semibold text-xl ">{{$company->company_name}}</h3>
                             

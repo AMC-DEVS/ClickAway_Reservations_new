@@ -19,6 +19,8 @@ class CreateReservationsTable extends Migration
             $table->unsignedBigInteger('company_id');
             $table->string('time', 100);
             $table->string('date', 100);
+            $table->timestamp('verified_at')->nullable();
+            $table->timestamp('rejected_at')->nullable();
             
             
             $table->timestamps();

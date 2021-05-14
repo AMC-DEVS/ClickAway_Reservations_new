@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\User;
+use App\Models\Company;
 
 class CompanyConfig extends Component
 {
@@ -24,11 +25,11 @@ class CompanyConfig extends Component
             $this->reservation_frequency = auth()->user()->company()->where('user_id', auth()->user()->id)->pluck('reservation_frequency')[0];
         }
 
-            $arrayToStore = [
-                'open_time' => $this->open_time,
-                'close_time' => $this->close_time,
-                'reservation_frequency' => $this->reservation_frequency
-            ];
+        $arrayToStore = [
+            'open_time' => $this->open_time,
+            'close_time' => $this->close_time,
+            'reservation_frequency' => $this->reservation_frequency
+        ];
         
         // Update informations
         auth()->user()->company()->update($arrayToStore);
@@ -38,8 +39,14 @@ class CompanyConfig extends Component
 
     public function render()
     {   
-        $company = auth()->user()->company()->where('user_id', auth()->user()->id)->get();
+        if(auth()->user()->company()->count() > 0) {
+            $company = auth()->user()->company()->where('user_id', auth()->user()->id)->get();
+        } else {
+            $team_owner = auth()->user()->teams[0]->user_id;
+            $company = Company::all()->where('user_id', $team_owner)[0];
+        }
         $open_t = $company->pluck('open_time')[0];
+        
         $close_t = $company->pluck('close_time')[0];
         $reservation_fr = $company->pluck('reservation_frequency')[0];
 

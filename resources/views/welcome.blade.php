@@ -28,10 +28,10 @@
                 <x-jet-button class="switch-button ml-4">
 									{{ __('Register') }}
 						</x-jet-button>
-					<div class="signup-buttons">
+					<!-- <div class="signup-buttons">
 						<i class="fab fa-google"></i>
 						<i class="fab fa-facebook"></i>
-					</div>
+					</div> -->
 			</x-slot>
 
 			<x-jet-validation-errors class="mb-4" />

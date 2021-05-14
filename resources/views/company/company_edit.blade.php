@@ -28,7 +28,7 @@
 
             
                 <div class="form-inputs">
-                    <div>
+                    <div class="mt-4">
                         <x-jet-label for="company_name" value="Company Name" />
                         <x-jet-input id="company_name" class="block mt-1 w-full" type="text" name="company_name" value="{{ old('company_name') ?? $company->company_name }}" required autofocus autocomplete="company_name" />
                     </div>

@@ -19,14 +19,10 @@
                     <x-jet-nav-link href="{{ route('user_reservations') }}" :active="request()->routeIs('user_reservations')">
                         My Reservations
                     </x-jet-nav-link>
-                    
-                    @if(auth()->user()->company()->count()>0)
+                  
+                    @if(auth()->user()->company()->count() > 0 || auth()->user()->teams->count() > 0)
                         <x-jet-nav-link href="{{ route('company_console') }}" :active="request()->routeIs('company_console')">
                             {{ 'Company Console' }}
-                        </x-jet-nav-link>
-                        @else
-                        <x-jet-nav-link href="{{ route('company_create') }}" :active="request()->routeIs('company_create')">
-                        Register your Company
                         </x-jet-nav-link>
                     @endif
                 </div>
@@ -34,7 +30,7 @@
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->
-                @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
+                @if ((Laravel\Jetstream\Jetstream::hasTeamFeatures() && auth()->user()->company()->count()) > 0 || (Laravel\Jetstream\Jetstream::hasTeamFeatures() && auth()->user()->teams->count() > 0))
                     <div class="ml-3 relative">
                         <x-jet-dropdown align="right" width="60">
                             <x-slot name="trigger">
@@ -114,11 +110,15 @@
                                 {{ __('Profile') }}
                             </x-jet-dropdown-link>
 
-                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                            <x-jet-dropdown-link href="{{ route('company_create') }}">
+                                {{ __('Register your Company') }}
+                            </x-jet-dropdown-link>
+                
+                            <!-- @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                 <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
                                     {{ __('API Tokens') }}
                                 </x-jet-dropdown-link>
-                            @endif
+                            @endif -->
 
                             <div class="border-t border-gray-100"></div>
 
@@ -190,11 +190,16 @@
                     {{ __('Profile') }}
                 </x-jet-responsive-nav-link>
 
+                <x-jet-responsive-nav-link href="{{ route('company_create') }}" :active="request()->routeIs('company_create')">
+                    {{ __('Register your Company') }}
+                </x-jet-responsive-nav-link>
+
+<!-- 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                     <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
                         {{ __('API Tokens') }}
                     </x-jet-responsive-nav-link>
-                @endif
+                @endif -->
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">

@@ -33590,6 +33590,9 @@ span.flatpickr-weekday {
   flex-wrap: wrap;
 }
 
+.res_status-date { -moz-flex-direction: column; flex-direction: column;
+}
+
 .company_card {
   display: flex;
   flex-wrap: wrap;
@@ -33940,21 +33943,21 @@ a.edit-button {
   margin: 0;
 }
 
-.status-success {
-  color: green;
-}
-
-.status-fail {
-  color: red;
-}
-
 .status-wait {
   color: var(--secondary-button);
 }
 
-.status-success,
-.status-fail {
+.text-green {
   color: green;
+}
+
+.text-red {
+  color: red;
+}
+
+.status-success,
+.status-reject {
+  color: white;
   display: flex;
   height: 40px;
   align-items: center;
@@ -33963,6 +33966,18 @@ a.edit-button {
   border-radius: 10px;
   justify-content: center;
   margin: auto;
+}
+
+div .status-success {
+  background-color: green;
+}
+
+div .status-reject {
+  background-color: red;
+}
+
+.console_tab {
+  min-height: 500px;
 }
 
 .checkbox-login:checked {
@@ -34191,7 +34206,15 @@ button {
 /* Home */
 
 .homesearch-wr {
-  padding: 0 0 20px 0;
+  padding: 0 0 20px 0; flex-wrap: wrap;
+}
+
+.homesearch {
+  padding: 10px 0;
+}
+
+.company_card_right button {
+  margin: 10px 0 0 0;
 }
 
 /* END Home */
@@ -34412,7 +34435,6 @@ select {
   width: 100%;
   height: 50px;
   font-size: 100%;
-  font-weight: bold;
   cursor: pointer;
   border-radius: 0;
   background: white;
@@ -34492,6 +34514,7 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+<<<<<<< HEAD
 /* Reservation requested (Accept & Deny) */
 
 .reservation-buttons {
@@ -34532,6 +34555,76 @@ input[type=number] {
   }
 }
 
+=======
+/* Company Reservations */
+
+.res_status-buttons {
+  display: flex;
+}
+
+.input-hours {
+  padding: 0 10px;
+}
+
+input[type=time]:hover {
+  cursor: pointer;
+}
+
+/* END Company Reservations */
+
+/* Loader */
+
+.reloader:hover {
+  animation: reloader 1.5s infinite 0s cubic-bezier(0.63, 0.47, 0.43, 0.61);
+  -webkit-animation: reloader 1.5s infinite 0s cubic-bezier(0.63, 0.47, 0.43, 0.61);
+  -o-animation: reloader 1.5s infinite 0s cubic-bezier(0.63, 0.47, 0.43, 0.61);
+  -ms-animation: reloader 1.5s infinite 0s cubic-bezier(0.63, 0.47, 0.43, 0.61);
+  -moz-animation:reloader 1.5s infinite 0s cubic-bezier(0.63, 0.47, 0.43, 0.61);
+}
+
+@-webkit-keyframes reloader{
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes reloader{
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(-360deg);
+  }
+}
+
+.elementToAnimate{
+  -webkit-animation: yourAnimation 3s infinite 0s linear;
+          animation: yourAnimation 3s infinite 0s linear;
+}
+
+/* END Loader */
+
+.company-default {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0;
+  background: #7edbdb;
+  padding: 50px;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+>>>>>>> email
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

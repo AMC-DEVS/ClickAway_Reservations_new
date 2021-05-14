@@ -1,25 +1,51 @@
 <?php
 
 namespace App\Http\Controllers;
+// namespace App\Mail;
 
+use App\Mail\reservation_mail;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 use App\Models\User;
 use App\Models\Company;
+use App\Models\Reservation;
 
 class ReservationController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index(){   
 
-        $company = auth()->user()->company()->where('user_id', auth()->user()->id)->get();
-
+        if(auth()->user()->company()->count() > 0) {
+            $company = auth()->user()->company()->where('user_id', auth()->user()->id)->get();
+        
+            $category = $company[0]->category()->get()->pluck('title')[0];
+            if($company[0]->reservation()->count()>0){
+            
+                $reservations = $company[0]->reservation()->latest()->get();
+                $users = User::all();
+            }
+            else {
+                $reservations = null;
+                $users = null;
+            }
+        }
+        else {
+            $team_owner = auth()->user()->teams[0]->user_id;
+            $company = Company::all()->where('user_id', $team_owner)[0];
+            $category = $company->category()->get()->pluck('title')[0];
+            
+            if($company->reservation()->count()>0){
+            
+                $reservations = $company->reservation()->latest()->get();
+                $users = User::all();
+            }
+            else {
+                $reservations = null;
+                $users = null;
+            }
+        }
         $ownername = auth()->user()->name;
 
         $company_name = $company->pluck('company_name')[0];
@@ -31,18 +57,10 @@ class ReservationController extends Controller
         $post_code = $company->pluck('post_code')[0];
         $address = $company->pluck('address')[0];
         $phone_num = $company->pluck('phone_num')[0];
-        $category = $company[0]->category()->get()->pluck('title')[0];
+        
      
        
-        if($company[0]->reservation()->count()>0){
-            
-            $reservations = $company[0]->reservation()->get();
-            $users = User::all();
-        }
-        else {
-            $reservations = null;
-            $users = null;
-        }
+        
 
 
 
@@ -74,14 +92,6 @@ class ReservationController extends Controller
        
     }
 
-    // public function show(){   
-    //     return view('company_console', compact('company','ownername','company_name', 'company_email'));
-    // }
-
-    // public function create(){   
-    //     return view('company_console', compact('company','ownername','company_name', 'company_email'));
-    // }
-
     public function save(){   
         $data = request()->validate([
             'user_id' => '',
@@ -100,6 +110,7 @@ class ReservationController extends Controller
  
         $user_name = auth()->user()->name;
         
+        // create SMS data 
         $message = $user_name.' We are able to verify your reservation.'.$data['time'].' '.$data['date'];
 
      	$sms_data = array(
@@ -118,6 +129,15 @@ class ReservationController extends Controller
         $sender_name = $company_name;		// Max 11 characters
 
         $res = $this->sendSMSMulti($sms_data, $api_token, $sender_name, 1);
+        // SMS END data
+
+        // Emails
+    
+        Mail::to( auth()->user()->email )->send(new reservation_mail($company_name, $user_name, $data['time'], $data['date']));
+
+        // END Emails
+
+
 	    return redirect('home');
     }
 
@@ -174,7 +194,5 @@ class ReservationController extends Controller
     //     return view('company_console', compact('company','ownername','company_name', 'company_email'));
     // }
 
-    // public function update(){   
-    //     return view('company_console', compact('company','ownername','company_name', 'company_email'));
-    // }
+
 }

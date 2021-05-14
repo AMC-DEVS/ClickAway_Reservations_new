@@ -10,9 +10,7 @@ class Reservation extends Model
     use HasFactory;
 
     
-    protected $fillable = [
-        'user_id', 'company_id', 'time', 'date'
-    ];
+    protected $guarded = [];
 
     public function company()
     {
