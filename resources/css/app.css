@@ -951,7 +951,7 @@ input[type=number] {
 
 /* Reservation requested (Accept & Deny) */
 .reservation-buttons {
-    display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex;
+    display: flex;
     justify-content:space-evenly;
 }
 
@@ -985,6 +985,7 @@ input[type=number] {
     .centered-text {
         text-align: center;
     }
+}
 
 /* Company Reservations */
 .res_status-buttons {

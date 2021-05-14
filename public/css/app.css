@@ -34514,7 +34514,6 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-<<<<<<< HEAD
 /* Reservation requested (Accept & Deny) */
 
 .reservation-buttons {
@@ -34555,7 +34554,6 @@ input[type=number] {
   }
 }
 
-=======
 /* Company Reservations */
 
 .res_status-buttons {
@@ -34624,7 +34622,6 @@ input[type=time]:hover {
   margin: 0 auto;
 }
 
->>>>>>> email
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
