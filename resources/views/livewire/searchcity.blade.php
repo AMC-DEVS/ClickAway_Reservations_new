@@ -51,7 +51,7 @@
                 <div class="glass-effect overflow-hidden shadow-xl sm:rounded-lg p-10">
                     <div class="company_card">  
                         @if($company->profile_photo_path)
-                            <img style="width: 80px; height:80px; object-fit: cover;" src="/storage/{{$company->profile_photo_path}}" alt="{{$company->company_name}}">
+                            <img style="width: 80px; height:80px; object-fit: cover; border-radius: 50%;" src="/storage/{{$company->profile_photo_path}}" alt="{{$company->company_name}}">
                             @else
                             <div class="company-default">{{$company->company_name}}</div>
                         @endif

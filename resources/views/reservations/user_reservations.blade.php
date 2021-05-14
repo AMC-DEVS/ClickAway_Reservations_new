@@ -15,7 +15,7 @@
           
 
             @if($user->reservation()->count() > 0)
-                @foreach($user->reservation as $reservation)
+                @foreach($user->reservation()->latest()->get() as $reservation)
                     <div class="navigation-effect overflow-hidden shadow-xl sm:rounded-lg d-flex console_info_wr p-5">
 
                         <div style = "display:none;">
@@ -24,7 +24,11 @@
                             {{  $date = $reservation->date }}
                         </div>                
                         <div class="console_info">
-                            <h3 class="font-semibold text-xl">Company name</h3>
+                        @if($company->profile_photo_path)
+                            <img style="width: 80px; height:80px; object-fit: cover; border-radius: 50%;" src="/storage/{{$company->profile_photo_path}}" alt="{{$company->company_name}}">
+                            @else
+                            <div class="company-default">{{$company->company_name}}</div>
+                        @endif
                             <p>{{ $company->company_name }}</p>
                         </div>
 

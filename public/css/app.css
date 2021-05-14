@@ -33590,6 +33590,9 @@ span.flatpickr-weekday {
   flex-wrap: wrap;
 }
 
+.res_make { -moz-flex-direction: column; flex-direction: column;
+}
+
 .res_status-date { -moz-flex-direction: column; flex-direction: column;
 }
 
@@ -34600,11 +34603,6 @@ input[type=time]:hover {
   }
 }
 
-.elementToAnimate{
-  -webkit-animation: yourAnimation 3s infinite 0s linear;
-          animation: yourAnimation 3s infinite 0s linear;
-}
-
 /* END Loader */
 
 .company-default {
@@ -34613,7 +34611,7 @@ input[type=time]:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto 0;
+  margin: 0 !important;
   background: #7edbdb;
   padding: 50px;
   border-radius: 50%;

@@ -29,6 +29,11 @@
     -webkit-flex-wrap: wrap;
     -moz-flex-wrap: wrap;
     flex-wrap: wrap;
+    
+}
+
+.res_make {
+    -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; flex-direction: column;
 }
 
 .res_status-date {
@@ -1027,10 +1032,6 @@ input[type=time]:hover {
         }
 }
 
-.elementToAnimate{
-    animation: yourAnimation 3s infinite 0s linear;
-}
-
 /* END Loader */
 
 .company-default {
@@ -1039,7 +1040,7 @@ input[type=time]:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto 0;
+    margin: 0 !important;
     background: #7edbdb;
     padding: 50px;
     border-radius: 50%;

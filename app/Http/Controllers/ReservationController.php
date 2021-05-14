@@ -106,36 +106,7 @@ class ReservationController extends Controller
             'time' => $data['time'],
             'date' => $data['date'],
         ]);
-        $user_num = auth()->user()->phone_num;
- 
-        $user_name = auth()->user()->name;
-        
-        // create SMS data 
-        $message = $user_name.' We are able to verify your reservation.'.$data['time'].' '.$data['date'];
-
-     	$sms_data = array(
-            array(
-                'destination' => $user_num,
-                'message' =>  $message
-            ),
-        );
-        $api_token = "815d060b35159c3643003bcddf3cdf716a80b8269914cfde30c8b91a8fa31817";
-        
-        $company = Company::all()->whereIn('id', $data['company_id']);
-        $company_name = $company->pluck('company_name')[0];
-        
-        $api_token = "815d060b35159c3643003bcddf3cdf716a80b8269914cfde30c8b91a8fa31817";
-        
-        $sender_name = $company_name;		// Max 11 characters
-
-        $res = $this->sendSMSMulti($sms_data, $api_token, $sender_name, 1);
-        // SMS END data
-
-        // Emails
-    
-        Mail::to( auth()->user()->email )->send(new reservation_mail($company_name, $user_name, $data['time'], $data['date']));
-
-        // END Emails
+     
 
 
 	    return redirect('home');
