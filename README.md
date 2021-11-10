@@ -1,6 +1,6 @@
 # ClickAway Reservations
 
-This application was developed by the use of Laravel 8 combined with Jetstream, Livewire and Tailwind CSS. 
+This application developed by the use of Laravel 8 combined with Jetstream, Livewire and Tailwind CSS. 
 
 ## Description
 The Click Away Reservations web application was developed to help users make reservations to shops within their area and also be able to get informed about their upcoming reservations. Also, the ability to showcase their company on the platform and receive reservations from different users is possible and functional. Overall, the application aims to aid users make reservations to their reaching company, shops and more within their area of reach.
